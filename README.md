@@ -2,6 +2,8 @@
 
 A respoistory for my third Milestone project for the Full Stack Software Development Course by Code Institute.
 
+## Development
+
 ### Setting Up MongoDB Shell
 
 1. A free account was set up on [cloud.mongodb.com](cloud.mongodb.com)
@@ -66,3 +68,4 @@ A respoistory for my third Milestone project for the Full Stack Software Develop
 
 1. A new database called 'floral_reef' was created.
 2. It was then populated with collections called 'flowers' and 'users'.
+3. Test records were added to each collection.
