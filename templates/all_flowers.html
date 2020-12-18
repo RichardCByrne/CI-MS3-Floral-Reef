@@ -1,46 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h1 class="text-center h1 mt-5 pt-5"><span id="all-flowers">All Flowers</span></h1>
+
     {% for flower in flowers %}
         {% if loop.index % 2 != 0 %}
             <div class="container">
-                <div class="flower-container">
+                <div class="flowers-container-left">
                     <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
-                                </div>
-                                <div class="col-md-6">
-                                    <h4>{{ flower.flower_name|title }}</h4>
-                                    <p><em>{{ flower.latin_name|upper }}</em></p>
-                                    {% if flower.is_wildflower %}
-                                        <p>Type: Wildflower</p>
-                                    {% endif %}
-                                    <p>{{ flower.description }}</p>
-                                    <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
-                                </div>
-                            </div>
+                        <div class="col-md-6 text-center">
+                            <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                        </div>
+                        <div class="col-md-6">
+                            <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                            <p><em>{{ flower.latin_name|upper }}</em></p>
+                            <p>Locations: {{ flower.location }}</p>
+                            {% if flower.is_wildflower %}
+                                <p>Type: Wildflower</p>
+                            {% endif %}
+                            <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                            <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
                         </div>
                     </div>
                 </div>
             </div>
         {% else %}
             <div class="container">
-                <div class="flower-container">
+                <div class="flowers-container-right">
                     <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h4>{{ flower.flower_name|title }}</h4>
-                                    <p><em>{{ flower.latin_name|upper }}</em></p>
-                                    <p>{{ flower.description }}</p>
-                                    <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
-                                </div>
-                            </div>
+                        <div class="col-md-6">
+                            <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                            <p><em>{{ flower.latin_name|upper }}</em></p>
+                            <p>Locations: {{ flower.location }}</p>
+                            {% if flower.is_wildflower %}
+                                <p>Type: Wildflower</p>
+                            {% endif %}
+                            <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                            <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
                         </div>
                     </div>
                 </div>
