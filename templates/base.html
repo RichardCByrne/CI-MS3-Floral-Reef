@@ -25,7 +25,7 @@
             <!-- Container wrapper -->
             <div class="container-fluid">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">Floral Reef</a>
+                <a class="navbar-brand" href="{{ url_for('home') }}">Floral Reef</a>
         
                 <!-- Toggle button -->
                 <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -35,14 +35,14 @@
                 </button>
 
                 <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Flowers</a>
+                            <a class="nav-link" href="{{ url_for('get_all_flowers') }}">Flowers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Log Out</a>
@@ -60,7 +60,7 @@
             </div>
             <!-- Container wrapper -->
         </nav>
-        <!-- Navbar -->
+
         {% block header %}
         {% endblock %}
     </header>
