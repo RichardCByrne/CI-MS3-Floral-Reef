@@ -22,6 +22,18 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/all_flowers")
+def get_all_flowers():
+    flowers = list(mongo.db.flowers.find())
+    return render_template("all_flowers.html", flowers=flowers)
+
+
+@app.route("/flower/<flower_id>")
+def flower(flower_id):
+    flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
+    return render_template("flower.html", flower=flower)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
