@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for flower in flowers %}
+        {% if loop.index % 2 != 0 %}
+            <div class="container">
+                <div class="flower-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-6 text-center">
+                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>{{ flower.flower_name|title }}</h4>
+                                    <p><em>{{ flower.latin_name|upper }}</em></p>
+                                    {% if flower.is_wildflower %}
+                                        <p>Type: Wildflower</p>
+                                    {% endif %}
+                                    <p>{{ flower.description }}</p>
+                                    <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="container">
+                <div class="flower-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>{{ flower.flower_name|title }}</h4>
+                                    <p><em>{{ flower.latin_name|upper }}</em></p>
+                                    <p>{{ flower.description }}</p>
+                                    <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
