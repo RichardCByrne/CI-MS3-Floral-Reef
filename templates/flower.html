@@ -11,7 +11,17 @@
                     <h3>{{ flower.flower_name|title }}</h3>
                     <h6>{{ flower.latin_name|upper }}</h6>
                     <p>{{ flower.description }}</p>
-                    <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                    {% if not flower.is_wildflower %}
+                        {% if flower.affiliate_1 or flower.affiliate_2 %}
+                            <h5>Where to Find:</h5>
+                            {% if flower.affiliate_1 %}
+                            <a class="flower-affiliate-link" href="{{ flower.affiliate_1 }}" target="_blank">Dublin - Howbart & Mays</a>
+                            {% endif %}
+                            {% if flower.affiliate_2 %}
+                            <a class="flower-affiliate-link" href="{{ flower.affiliate_2 }}" target="_blank">Galway - Knocknacarra Florists</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
                 </div>
             </div>
             <div class="row">

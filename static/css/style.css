@@ -54,6 +54,14 @@ p {
     font-size: 1.4rem;
 }
 
+a {
+    color: #c7ae6b;
+}
+
+a:hover {
+    color: #C9AD5D;
+}
+
 
 /* --------------------------------Components */
 .btn.btn-lg {
@@ -186,7 +194,7 @@ nav a:hover {
 }
 
 a.see-more {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 
@@ -201,6 +209,11 @@ a.see-more {
     padding: 2rem 2rem 2rem 0;
     object-fit: cover;
     overflow: hidden;
+}
+
+.flower-affiliate-link {
+    font-size: 1.1rem;
+    display: block;
 }
 
 /* --------------------------------Register.html */
