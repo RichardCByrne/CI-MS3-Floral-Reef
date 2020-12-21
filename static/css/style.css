@@ -61,6 +61,16 @@ p {
     border-radius: .6rem;
 }
 
+.flashes {
+    margin-top: 5rem;
+    margin-bottom: -3rem;
+    border-bottom: crimson solid 2px;
+}
+
+.flashes h4 {
+    line-height: 2;
+}
+
 
 /* --------------------------------Nav */
 .navbar {
@@ -172,6 +182,11 @@ a.see-more {
 }
 
 /* --------------------------------Register.html */
+.register {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
 form label {
     font-size: 1.4rem;
 }

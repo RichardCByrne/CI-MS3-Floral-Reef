@@ -41,7 +41,7 @@ def register():
             {"email": request.form.get("email").lower()})
 
         if existing_user:
-            flash("Email already in use")
+            flash("Email already in use.")
             return redirect(url_for("register"))
 
         register = {

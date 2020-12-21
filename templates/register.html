@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="text-center mt-5 mb-5 pt-5">Register</h1>
+    <h1 class="text-center register">Register</h1>
     <h5 class="text-center mb-5">Register now to start adding flowers and contributing to the community!</h5>
 
     <div class="row">
-        <div class="col-sm-none col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('register') }}">
                 <div class="row mb-4">
@@ -14,14 +14,14 @@
                     <div class="col">
                         <div class="form-outline">
                             <input type="text" id="first_name" name="first_name" class="form-control" />
-                            <label class="form-label" for="first_name">First name</label>
+                            <label class="form-label" for="first_name">First Name</label>
                         </div>
                     </div>
                     <!-- Last Name -->
                     <div class="col">
                         <div class="form-outline">
                             <input type="text" id="last_name" name="last_name" class="form-control" />
-                            <label class="form-label" for="last_name">Last name</label>
+                            <label class="form-label" for="last_name">Last Name</label>
                         </div>
                     </div>
                 </div>
