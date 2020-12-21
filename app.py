@@ -60,6 +60,13 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/logout")
+def logout():
+    session.pop("user")
+    flash("You have successfully been logged out.")
+    return render_template("login.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
