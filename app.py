@@ -34,6 +34,32 @@ def flower(flower_id):
     return render_template("flower.html", flower=flower)
 
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"email": request.form.get("email").lower()})
+
+        if existing_user:
+            flash("Email already in use")
+            return redirect(url_for("register"))
+
+        register = {
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "first_name": request.form.get("first_name").lower(),
+            "last_name": request.form.get("last_name").lower()
+        }
+
+        mongo.db.users.insert_one(register)
+
+        session["user"] = request.form.get("email").lower()
+        flash("Registration successful!")
+        # return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("register.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

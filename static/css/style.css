@@ -170,3 +170,17 @@ a.see-more {
     object-fit: cover;
     overflow: hidden;
 }
+
+/* --------------------------------Register.html */
+form label {
+    font-size: 1.4rem;
+}
+
+.form-submit-btn {
+    background-color: #c7ae6b;
+    font-size: 1.2rem;
+}
+
+.form-submit-btn:hover {
+    background-color: #C9AD5D;
+}
