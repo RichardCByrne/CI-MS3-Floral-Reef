@@ -199,3 +199,8 @@ form label {
 .form-submit-btn:hover {
     background-color: #C9AD5D;
 }
+
+/* --------------------------------Profile.html */
+.profile {
+    margin-top: 6rem;
+}

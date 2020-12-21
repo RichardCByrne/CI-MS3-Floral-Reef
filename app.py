@@ -70,7 +70,7 @@ def login():
             if check_password_hash(existing_user["password"], request.form.get("password")):
                 session["user"] = existing_user["email"].lower()
                 flash("Welcome, {}".format(existing_user["first_name"].capitalize()))
-                #return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("profile", name=existing_user["first_name", "last_name"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -86,6 +86,14 @@ def logout():
     session.pop("user")
     flash("You have successfully been logged out.")
     return render_template("login.html")
+
+
+@app.route("/profile/<email>")
+def get_profile(email):
+    user = mongo.db.users.find_one(
+        {"email": email}
+    )
+    return render_template("profile.html", name=user["first_name"])
 
 
 if __name__ == "__main__":

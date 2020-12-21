@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- References from https://mdbootstrap.com/docs/standard/components/cards/#subsection-simple -->
+    <div class="row profile">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 card">
+            <div class="card-body">
+                <h3 class="text-center">
+                    {{ name.capitalize() }}'s Profile
+                </h3>
+                <br>
+                <h6>
+                    <a href="#">Edit Profile</a>
+                </h6>
+                <br>
+                <h5>
+                    Your Contributions
+                </h5>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+{% endblock %}
