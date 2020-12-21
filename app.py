@@ -117,6 +117,30 @@ def edit_profile(email):
     return render_template("edit_profile.html", user=user)
 
 
+@app.route("/add_flower", methods=["GET", "POST"])
+def add_flower():
+    if request.method == "POST":
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "is_wildflower": request.form.get("is_wildflower"),
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
+
+        mongo.db.flowers.insert_one(new_flower)
+        flash("Your flower has been added!\nThank you for your contribution.")
+        return redirect(url_for("get_all_flowers"))
+        
+    return render_template("add_flower.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

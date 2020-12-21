@@ -238,3 +238,11 @@ form label {
 .profile {
     margin-top: 6rem;
 }
+
+/* --------------------------------Add_Flower.html */
+.checkbox {
+    display: inline-block;
+    width: 5%;
+    margin-left: 1rem;
+    transform: translateY(.7rem);
+}
