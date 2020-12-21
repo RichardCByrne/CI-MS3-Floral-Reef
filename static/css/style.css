@@ -71,6 +71,28 @@ p {
     line-height: 2;
 }
 
+.form-submit-btn {
+    color: white;
+    background-color: #c7ae6b;
+    font-size: 1.2rem;
+}
+
+.form-submit-btn:hover {
+    background-color: #C9AD5D;
+}
+
+.cancel-button {
+    color: white;
+    background-color: crimson;
+    font-size: 1.2rem;
+}
+
+.cancel-button:hover {
+    color: black;
+    background-color: rgb(221, 40, 76);
+    font-size: 1.2rem;
+}
+
 
 /* --------------------------------Nav */
 .navbar {
@@ -189,15 +211,6 @@ a.see-more {
 
 form label {
     font-size: 1.4rem;
-}
-
-.form-submit-btn {
-    background-color: #c7ae6b;
-    font-size: 1.2rem;
-}
-
-.form-submit-btn:hover {
-    background-color: #C9AD5D;
 }
 
 /* --------------------------------Profile.html */

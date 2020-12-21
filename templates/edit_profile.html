@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="text-center register">Edit Profile</h1>
+    <h5 class="text-center mb-5">Change your details</h5>
+
+    <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+            <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
+            <form method="POST" action="{{ url_for('edit_profile', email=session['user']) }}">
+                <div class="row mb-4">
+                    <!-- First Name -->
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="first_name" name="first_name" class="form-control" />
+                            <label class="form-label" for="first_name">First Name</label>
+                        </div>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="last_name" name="last_name" class="form-control" />
+                            <label class="form-label" for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <input type="email" id="email" name="email" class="form-control" />
+                    <label class="form-label" for="email">Email Address</label>
+                </div>
+            
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <input type="password" id="password" name="password" class="form-control" />
+                    <label class="form-label" for="password">Password</label>
+                </div>
+            
+                <!-- Buttons -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn mb-4 form-submit-btn">Edit</button>
+                    <a href="{{ url_for('get_profile', email=session['user']) }}" class="btn mb-4 cancel-button">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

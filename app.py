@@ -96,6 +96,27 @@ def get_profile(email):
     return render_template("profile.html", name=user["first_name"])
 
 
+@app.route("/edit_profile/<email>", methods=["GET", "POST"])
+def edit_profile(email):
+    user = mongo.db.users.find_one(
+        {"email": email}
+    )
+    if request.method == "POST":
+        record_update = {
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password")),
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name")
+        }
+
+        mongo.db.users.update({"email": email}, record_update)
+        session["user"] = request.form.get("email")
+        flash("Details Successfully Updated")
+        return redirect(url_for("get_profile", email=session["user"]))
+
+    return render_template("edit_profile.html", user=user)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
