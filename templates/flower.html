@@ -10,8 +10,11 @@
                 <div class="col-md-6">
                     <h3>{{ flower.flower_name|title }}</h3>
                     <h6>{{ flower.latin_name|upper }}</h6>
-                    <p>{{ flower.description }}</p>
-                    {% if not flower.is_wildflower %}
+                    {% if flower.is_wildflower == "on" %}
+                        <p><strong>Type: Wildflower</strong></p>
+                        <p>{{ flower.description }}</p>
+                    {% else %}
+                        <p>{{ flower.description }}</p>
                         {% if flower.affiliate_1 or flower.affiliate_2 %}
                             <h5>Where to Find:</h5>
                             {% if flower.affiliate_1 %}
