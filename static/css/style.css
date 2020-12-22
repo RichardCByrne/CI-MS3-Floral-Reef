@@ -135,7 +135,7 @@ nav a:hover {
 
 /* --------------------------------Home.html */
 .bg-image {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;

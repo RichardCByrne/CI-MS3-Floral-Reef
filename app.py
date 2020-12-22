@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 
 @app.route("/all_flowers")
@@ -31,7 +31,8 @@ def get_all_flowers():
 @app.route("/flower/<flower_id>")
 def flower(flower_id):
     flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
-    return render_template("flower.html", flower=flower)
+    user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
+    return render_template("flower.html", flower=flower, user_images=user_images)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -139,6 +140,23 @@ def add_flower():
         return redirect(url_for("get_all_flowers"))
         
     return render_template("add_flower.html")
+
+
+@app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
+def add_user_image(flower_id):
+    if request.method == "POST":
+        #user_id = mongo.db.users.find_one({"email": session["user"]})["_id"]
+        new_user_image = {
+            "user_id": session["user"],
+            "flower_id": flower_id,
+            "image_source": request.form.get("image_source"),
+            "description": request.form.get("description")
+        }
+        mongo.db.user_images.insert_one(new_user_image)
+        flash("Your image has been successfuly added!")
+        return redirect(url_for("flower", flower_id=flower_id))
+
+    return render_template('add_user_image.html', flower_id=flower_id)
 
 
 if __name__ == "__main__":

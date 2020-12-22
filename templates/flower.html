@@ -4,9 +4,11 @@
     <div class="container">
         <div class="flower-container">
             <div class="row">
+                <!-- Image -->
                 <div class="col-md-6 text-center">
                     <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
                 </div>
+                <!-- Overview -->
                 <div class="col-md-6">
                     <h3>{{ flower.flower_name|title }}</h3>
                     <h6>{{ flower.latin_name|upper }}</h6>
@@ -16,17 +18,18 @@
                     {% else %}
                         <p>{{ flower.description }}</p>
                         {% if flower.affiliate_1 or flower.affiliate_2 %}
-                            <h5>Where to Find:</h5>
+                            <h5>Available:</h5>
                             {% if flower.affiliate_1 %}
-                            <a class="flower-affiliate-link" href="{{ flower.affiliate_1 }}" target="_blank">Dublin - Howbart & Mays</a>
+                                <a class="flower-affiliate-link" href="{{ flower.affiliate_1 }}" target="_blank">Dublin - Howbart & Mays</a>
                             {% endif %}
                             {% if flower.affiliate_2 %}
-                            <a class="flower-affiliate-link" href="{{ flower.affiliate_2 }}" target="_blank">Galway - Knocknacarra Florists</a>
+                                <a class="flower-affiliate-link" href="{{ flower.affiliate_2 }}" target="_blank">Galway - Knocknacarra Florists</a>
                             {% endif %}
                         {% endif %}
                     {% endif %}
                 </div>
             </div>
+            <!-- Flower Info -->
             <div class="row">
                 <div class="col">
                     <h4>Flower Info</h4>
@@ -46,8 +49,33 @@
                     <p>{{ flower.irish_name|title }}</p>
                 </div>
                 <div class="col-md-6">
-                    <h5>Locations Found:</h5>
-                    <p>{{ flower.location }}</p>
+                    {% if flower.is_wildflower == "on" %}
+                        <h5>Locations Found:</h5>
+                        <p>{{ flower.location }}</p>
+                    {% else %}
+
+                    {% endif %}
+                </div>
+            </div>
+            <!-- User Images -->
+            {% if user_images %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Images</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Displays all user-submitted images of the flower with the user-submitted description as the alt tag -->
+                        {% for image in user_images %}
+                            <img src="{{ image.image_source }}" alt="{{ image.description }}">
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col">
+                    <a href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your Image!</a>
                 </div>
             </div>
         </div>

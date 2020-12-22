@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="text-center register">Add Your Image</h1>
+    
+    <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+            <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
+            <form method="POST" action="{{ url_for('add_user_image', flower_id=flower_id) }}">
+                <!-- Image Url -->
+                <div class="form-outline mb-4">
+                    <input type="url" id="image_source" name="image_source" class="form-control" placeholder="https://..."
+                        required/>
+                    <label class="form-label" for="image_source">Image URL</label>
+                </div>
+                <!-- Description -->
+                <div class="form-outline mb-4">
+                    <textarea type="text" id="description" name="description" class="form-control"
+                        placeholder="e.g. Rose in flowerbed" required></textarea>
+                    <label class="form-label" for="description">Flower Description</label>
+                </div>
+                <!-- Buttons -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn mb-4 form-submit-btn">Add Image</button>
+                    <a href="{{ url_for('flower', flower_id=flower_id) }}" class="btn mb-4 cancel-button">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
