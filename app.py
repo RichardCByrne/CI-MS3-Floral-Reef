@@ -145,9 +145,10 @@ def add_flower():
 @app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
 def add_user_image(flower_id):
     if request.method == "POST":
-        #user_id = mongo.db.users.find_one({"email": session["user"]})["_id"]
+        user = mongo.db.users.find_one({"email": session["user"]})
+        
         new_user_image = {
-            "user_id": session["user"],
+            "user_id": user["_id"],
             "flower_id": flower_id,
             "image_source": request.form.get("image_source"),
             "description": request.form.get("description")
