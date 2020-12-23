@@ -8,19 +8,20 @@
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
-            <form method="POST" action="{{ url_for('login') }}">            
+            <form method="POST" action="{{ url_for('login') }}">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <input type="email" id="email" name="email" class="form-control" />
                     <label class="form-label" for="email">Email Address</label>
                 </div>
-            
+    
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="password" name="password" class="form-control" />
+                    <input type="password" id="password" name="password" class="form-control" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" />
                     <label class="form-label" for="password">Password</label>
                 </div>
-            
+    
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-block mb-4 form-submit-btn">Log In</button>
             </form>

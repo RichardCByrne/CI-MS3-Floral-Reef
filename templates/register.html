@@ -13,31 +13,34 @@
                     <!-- First Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="first_name" name="first_name" class="form-control" />
+                            <input type="text" id="first_name" name="first_name" class="form-control" minlength="2"
+                                maxlength="25" />
                             <label class="form-label" for="first_name">First Name</label>
                         </div>
                     </div>
                     <!-- Last Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="last_name" name="last_name" class="form-control" />
+                            <input type="text" id="last_name" name="last_name" class="form-control" minlength="2"
+                                maxlength="25" />
                             <label class="form-label" for="last_name">Last Name</label>
                         </div>
                     </div>
                 </div>
-            
+    
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="email" id="email" name="email" class="form-control" />
+                    <input type="email" id="email" name="email" class="form-control" minlength="5" maxlength="35" />
                     <label class="form-label" for="email">Email Address</label>
                 </div>
-            
+    
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="password" name="password" class="form-control" />
+                    <input type="password" id="password" name="password" class="form-control" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" />
                     <label class="form-label" for="password">Password</label>
                 </div>
-            
+    
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-block mb-4 form-submit-btn">Sign up</button>
             </form>
