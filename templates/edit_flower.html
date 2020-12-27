@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="text-center register">Edit Flower</h1>
+    
+    <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+            <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
+            <form method="POST" action="{{ url_for('edit_flower', flower_id=flower_id) }}">
+                <div class="row mb-4">
+                    <!-- Flower Name -->
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="flower_name" name="flower_name" class="form-control"
+                                placeholder="e.g. Agrimony" minlength="3" maxlength="30" required />
+                            <label class="form-label" for="flower_name">Flower Name</label>
+                        </div>
+                    </div>
+                    <!-- Irish Name -->
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="irish_name" name="irish_name" class="form-control"
+                                placeholder="e.g. Marbhdhraighean" minlength="3" maxlength="30" />
+                            <label class="form-label" for="irish_name">Irish Name</label>
+                        </div>
+                    </div>
+                    <!-- Latin Name -->
+                    <div class="col">
+                        <div class="form-outline">
+                            <input type="text" id="latin_name" name="latin_name" class="form-control"
+                                placeholder="e.g. Agrimonia Eupatoria" minlength="3" maxlength="30" required />
+                            <label class="form-label" for="latin_name">Latin Name</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Family -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
+                        minlength="3" maxlength="30" required />
+                    <label class="form-label" for="family">Flower Family</label>
+                </div>
+    
+                <!-- Flowering Time -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="flowering_time" name="flowering_time" class="form-control"
+                        placeholder="e.g. June-September" minlength="6" maxlength="22" required />
+                    <label class="form-label" for="flowering_time">Flowering Time</label>
+                </div>
+    
+                <!-- Description -->
+                <div class="form-outline mb-4">
+                    <textarea type="text" id="description" name="description" class="form-control"
+                        placeholder="e.g. Tall spikes of small yellow flowers..." minlength="20" maxlength="250"
+                        required></textarea>
+                    <label class="form-label" for="description">Flower Description</label>
+                </div>
+    
+                <!-- Is Wildflower -->
+                <div class="form-outline mb-4 text-left">
+                    <label class="form-label" for="is_wildflower">Is this flower a wildflower?</label>
+                    <input type="checkbox" id="is_wildflower" name="is_wildflower" class="form-control checkbox" />
+                </div>
+    
+                <!-- Location -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="location" name="location" class="form-control"
+                        placeholder="e.g. Found on dry grassland, hedgerows, roadsides. Prefers calcareous soils."
+                        minlength="10" maxlength="100" />
+                    <label class="form-label" for="location">Where can it be found?</label>
+                </div>
+    
+                <!-- Image Url -->
+                <div class="form-outline mb-4">
+                    <input type="url" id="image_url" name="image_url" class="form-control" placeholder="https://..."
+                        required />
+                    <label class="form-label" for="image_url">Image URL</label>
+                </div>
+    
+                <!-- Buttons -->
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn mb-4 form-submit-btn">Edit Flower</button>
+                    <a href="{{ url_for('flower', flower_id=flower_id) }}" class="btn mb-4 cancel-button">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
