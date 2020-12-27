@@ -1,6 +1,7 @@
 /* --------------------------------General */
 * {
     scroll-behavior: smooth;
+    transition: .5s;
     margin: 0;
     padding: 0;
     border: 0;
@@ -77,6 +78,15 @@ a:hover {
 
 .flashes h4 {
     line-height: 2;
+}
+
+.edit-btn {
+    background-color: #c7ae6b;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #C9AD5D;
 }
 
 .form-submit-btn {
@@ -206,7 +216,7 @@ a.see-more {
 }
 
 
-/* --------------------------------Flowers.html */
+/* --------------------------------Flower.html */
 .flower-container {
     margin: 5rem;
 }
@@ -214,7 +224,7 @@ a.see-more {
 .flower-container img {
     width: 100%;
     max-height: 25rem;
-    padding: 2rem 2rem 2rem 0;
+    margin: 2rem 2rem 2rem 0;
     object-fit: cover;
     overflow: hidden;
 }
@@ -222,6 +232,47 @@ a.see-more {
 .flower-affiliate-link {
     font-size: 1.1rem;
     display: block;
+}
+
+.image-container {
+    position: relative;
+    width: 50%;
+}
+
+.current-user-image {
+    width: 100%;
+    height: auto;
+}
+
+.user-image-view-btn {
+    background-color: rgb(78, 78, 180);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.user-image-delete-btn {
+    background-color: rgb(207, 69, 69);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.your-image {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    font-size: 1.2rem;
+    color: white;
+    padding: 1rem;
+    background-color: rgb(190, 146, 25);
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
 }
 
 /* --------------------------------Register.html */

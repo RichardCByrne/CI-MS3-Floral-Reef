@@ -16,6 +16,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -32,7 +33,39 @@ def get_all_flowers():
 def flower(flower_id):
     flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
     user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
-    return render_template("flower.html", flower=flower, user_images=user_images)
+    current_user = mongo.db.users.find_one({"email": session["user"]})
+    current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
+    return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
+
+
+@app.route("/add_flower", methods=["GET", "POST"])
+def add_flower():
+    if request.method == "POST":
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "is_wildflower": request.form.get("is_wildflower"),
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
+
+        mongo.db.flowers.insert_one(new_flower)
+        flash("Your flower has been added!\nThank you for your contribution.")
+        return redirect(url_for("get_all_flowers"))
+        
+    return render_template("add_flower.html")
+
+
+@app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
+def edit_flower(flower_id):
+    return render_template("edit_flower.html", flower_id=flower_id)
+
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -116,30 +149,6 @@ def edit_profile(email):
         return redirect(url_for("get_profile", email=session["user"]))
 
     return render_template("edit_profile.html", user=user)
-
-
-@app.route("/add_flower", methods=["GET", "POST"])
-def add_flower():
-    if request.method == "POST":
-        new_flower = {
-            "flower_name": request.form.get("flower_name"),
-            "latin_name": request.form.get("latin_name"),
-            "irish_name": request.form.get("irish_name"),
-            "family": request.form.get("family"),
-            "is_wildflower": request.form.get("is_wildflower"),
-            "flowering_time": request.form.get("flowering_time"),
-            "image_url": request.form.get("image_url"),
-            "description": request.form.get("description"),
-            "location": request.form.get("location"),
-            "affiliate_1": "https://howbertandmays.ie/",
-            "affiliate_2": "https://www.knocknacarraflorists.ie/"
-        }
-
-        mongo.db.flowers.insert_one(new_flower)
-        flash("Your flower has been added!\nThank you for your contribution.")
-        return redirect(url_for("get_all_flowers"))
-        
-    return render_template("add_flower.html")
 
 
 @app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
