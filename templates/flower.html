@@ -2,6 +2,22 @@
 {% block content %}
 
     <div class="container">
+        <!-- Modal referenced from https://stackoverflow.com/questions/25023199/in-bootstrap-open-enlarge-image-in-modal -->
+        <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">{{ flower.flower_name|title }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="imagepreview" style="width: 400px; height: 264px;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="flower-container">
             <div class="row">
                 <!-- Image -->
@@ -82,13 +98,11 @@
                                 <div class="image-container">
                                     <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
                                     <p class="your-image">Your image</p>
-                                    <button class="btn user-image-view-btn">View</button>
                                     <button class="btn user-image-delete-btn">Delete</button>
                                 </div>
                             {% else %}
                                 <div class="image-container">
-                                    <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
-                                    <button class="btn user-image-view-btn image-btn-center">View</button>
+                                    <img src="{{ image.image_source }}" alt="{{ image.description }}">
                                 </div>
                             {% endif %}
                         {% endfor %}

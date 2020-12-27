@@ -244,22 +244,12 @@ a.see-more {
     height: auto;
 }
 
-.user-image-view-btn {
-    background-color: rgb(78, 78, 180);
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
 .user-image-delete-btn {
     background-color: rgb(207, 69, 69);
     color: white;
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
     display: none;
 }

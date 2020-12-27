@@ -1,8 +1,4 @@
 $(document).ready(function(){
-    $(".current-user-image").click(function(){
-        alert("Test")
-    })
-
     $(".current-user-image").hover(function(){
         $(this).css("filter", "brightness(50%)");
         $(this).siblings("button").show();
