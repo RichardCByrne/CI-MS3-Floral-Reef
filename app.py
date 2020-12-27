@@ -67,6 +67,37 @@ def edit_flower(flower_id):
     return render_template("edit_flower.html", flower_id=flower_id)
 
 
+@app.route("/delete_flower/<flower_id>")
+def delete_floewr(flower_id):
+    mongo.db.flowers.remove({"_id": ObjectId(flower_id)})
+    flash("Flower succesfully deleted")
+    return redirect(url_for("get_all_flowers"))
+
+
+@app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
+def add_user_image(flower_id):
+    if request.method == "POST":
+        user = mongo.db.users.find_one({"email": session["user"]})
+        
+        new_user_image = {
+            "user_id": user["_id"],
+            "flower_id": flower_id,
+            "image_source": request.form.get("image_source"),
+            "description": request.form.get("description")
+        }
+        mongo.db.user_images.insert_one(new_user_image)
+        flash("Your image has been successfuly added!")
+        return redirect(url_for("flower", flower_id=flower_id))
+
+    return render_template('add_user_image.html', flower_id=flower_id)
+
+
+@app.route("/delete_user_image/<image_id>")
+def delete_user_image(image_id):
+    mongo.db.user_images.remove({"_id": ObjectId(image_id)})
+    flash("Your image has been deleted")
+    return redirect(url_for("get_all_flowers"))
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -89,7 +120,7 @@ def register():
 
         session["user"] = request.form.get("email").lower()
         flash("Registration successful!")
-        # return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -151,24 +182,6 @@ def edit_profile(email):
         return redirect(url_for("get_profile", email=session["user"]))
 
     return render_template("edit_profile.html", user=user)
-
-
-@app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
-def add_user_image(flower_id):
-    if request.method == "POST":
-        user = mongo.db.users.find_one({"email": session["user"]})
-        
-        new_user_image = {
-            "user_id": user["_id"],
-            "flower_id": flower_id,
-            "image_source": request.form.get("image_source"),
-            "description": request.form.get("description")
-        }
-        mongo.db.user_images.insert_one(new_user_image)
-        flash("Your image has been successfuly added!")
-        return redirect(url_for("flower", flower_id=flower_id))
-
-    return render_template('add_user_image.html', flower_id=flower_id)
 
 
 if __name__ == "__main__":
