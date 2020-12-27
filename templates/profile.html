@@ -1,4 +1,11 @@
 {% extends "base.html" %}
+
+<!-- Meta Title -->
+{% block title %}
+    <title>{{ name.capitalize() }}'s Profile</title>
+{% endblock %}
+
+<!-- Main Content -->
 {% block content %}
 
     <!-- References from https://mdbootstrap.com/docs/standard/components/cards/#subsection-simple -->
@@ -14,9 +21,12 @@
                     <a href="{{ url_for('edit_profile', email=session['user']) }}">Edit Profile</a>
                 </h6>
                 <br>
-                <h5>
-                    Your Contributions
-                </h5>
+                <h5>Your Contributions</h5>
+                <div>
+                    {% for image in user_images %}
+                        <img class="profile-images" src="{{ image.image_source }}" alt="{{ image.description }}">
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <div class="col-md-4"></div>

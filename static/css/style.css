@@ -293,3 +293,9 @@ form label {
     margin-left: 1rem;
     transform: translateY(.7rem);
 }
+
+.profile-images {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
