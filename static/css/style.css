@@ -264,6 +264,12 @@ a.see-more {
     display: none;
 }
 
+.image-btn-center {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%, -50%);
+}
+
 .your-image {
     position: absolute;
     top: 10%;
