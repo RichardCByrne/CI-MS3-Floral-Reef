@@ -70,13 +70,14 @@ def flower(flower_id):
 def add_flower():
     if request.method == "POST":
         db_length = len(list(mongo.db.flowers.find()))
+        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
         new_flower = {
             "flower_name": request.form.get("flower_name"),
             "latin_name": request.form.get("latin_name"),
             "irish_name": request.form.get("irish_name"),
             "family": request.form.get("family"),
             "key": db_length + 1,
-            "is_wildflower": request.form.get("is_wildflower"),
+            "is_wildflower": is_wildflower,
             "flowering_time": request.form.get("flowering_time"),
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
@@ -95,6 +96,27 @@ def add_flower():
 
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
+    if request.method == "POST":
+        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "is_wildflower": is_wildflower,
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "occasions": request.form.get("occasions"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
+
+        mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
+        flash("Flower successfully updated!")
+        return redirect(url_for('flower', flower_id = flower_id))
+
     flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
     return render_template("edit_flower.html", flower=flower)
 
