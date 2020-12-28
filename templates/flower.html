@@ -121,6 +121,19 @@
                         {% endfor %}
                     </div>
                 </div>
+            {% else %}
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Images
+                        <p>No user images were found.</p>
+                        {% if session.user %}
+                            <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your Image!</a></p>
+                        {% else %}
+                            <p>(<a href="{{ url_for('login') }}">Log in</a> to add your own images!)</p>
+                        {% endif %}
+                    </h4>
+                </div>
+            </div>
             {% endif %}
             <div class="row">
                 <div class="col">
