@@ -95,11 +95,12 @@ def add_flower():
 
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
-    return render_template("edit_flower.html", flower_id=flower_id)
+    flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
+    return render_template("edit_flower.html", flower=flower)
 
 
 @app.route("/delete_flower/<flower_id>")
-def delete_floewr(flower_id):
+def delete_flower(flower_id):
     mongo.db.flowers.remove({"_id": ObjectId(flower_id)})
     flash("Flower succesfully deleted")
     return redirect(url_for("get_all_flowers"))
