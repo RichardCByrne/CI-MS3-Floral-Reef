@@ -1,4 +1,5 @@
 import os
+from random import sample, randint
 from flask import (Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -30,6 +31,23 @@ def search():
     return render_template("all_flowers.html", flowers=flowers)
 
 
+@app.route("/get_inspired")
+def get_inspired():
+    db_length = len(list(mongo.db.flowers.find()))
+    rand_int = randint(1, db_length + 1)
+    print(db_length)
+    print(rand_int)
+    flower = mongo.db.flowers.find_one({"key": str(rand_int)})
+    print(flower)
+    user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(flower["_id"])}))
+    if session:
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
+        return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
+    else:
+        return render_template("flower.html", flower=flower, user_images=user_images)
+
+
 @app.route("/all_flowers")
 def get_all_flowers():
     flowers = list(mongo.db.flowers.find())
@@ -40,19 +58,24 @@ def get_all_flowers():
 def flower(flower_id):
     flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
     user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
-    current_user = mongo.db.users.find_one({"email": session["user"]})
-    current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
-    return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
+    if session:
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
+        return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
+    else:
+        return render_template("flower.html", flower=flower, user_images=user_images)
 
 
 @app.route("/add_flower", methods=["GET", "POST"])
 def add_flower():
     if request.method == "POST":
+        db_length = len(list(mongo.db.flowers.find()))
         new_flower = {
             "flower_name": request.form.get("flower_name"),
             "latin_name": request.form.get("latin_name"),
             "irish_name": request.form.get("irish_name"),
             "family": request.form.get("family"),
+            "key": db_length + 1,
             "is_wildflower": request.form.get("is_wildflower"),
             "flowering_time": request.form.get("flowering_time"),
             "image_url": request.form.get("image_url"),

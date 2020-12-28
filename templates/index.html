@@ -16,7 +16,7 @@
                     <br>
                     <form action="{{ url_for('search') }}" method="post" class="text-center">
                         <input type="search" name="query" id="query" minlength="3" class="btn btn-outline-light btn-lg m-2" placeholder="Search" required>
-                        <a href="" role="button" class="btn btn-outline-light btn-lg m-2">Get Inspired</a>
+                        <a href="{{ url_for('get_inspired') }}" role="button" class="btn btn-outline-light btn-lg m-2">Get Inspired</a>
                     </form>
                 </div>
             </div>
