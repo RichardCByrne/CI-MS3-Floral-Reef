@@ -23,6 +23,13 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query").lower()
+    flowers = list(mongo.db.flowers.find({"$text": {"$search": query}}))
+    return render_template("all_flowers.html", flowers=flowers)
+
+
 @app.route("/all_flowers")
 def get_all_flowers():
     flowers = list(mongo.db.flowers.find())

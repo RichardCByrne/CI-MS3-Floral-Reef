@@ -14,8 +14,10 @@
                     <h1>Floral Reef</h1>
                     <h4 class="lead">The Only Community-Driven Irish Flower Encyclopedia</h4>
                     <br>
-                    <a href="" role="button" class="btn btn-outline-light btn-lg m-2">Search</a>
-                    <a href="" role="button" class="btn btn-outline-light btn-lg m-2">Get Inspired</a>
+                    <form action="{{ url_for('search') }}" method="post" class="text-center">
+                        <input type="search" name="query" id="query" minlength="3" class="btn btn-outline-light btn-lg m-2" placeholder="Search" required>
+                        <a href="" role="button" class="btn btn-outline-light btn-lg m-2">Get Inspired</a>
+                    </form>
                 </div>
             </div>
         </div>
