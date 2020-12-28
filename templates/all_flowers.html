@@ -25,7 +25,7 @@
                                     <p>Type: Wildflower</p>
                                     <p>Locations: {{ flower.location }}</p>
                                 {% else %}
-                                    <p>Occasions: </p>
+                                    <p>Occasions: {{ flower.occasions }}</p>
                                 {% endif %}
                                 <p>Flowering Time: {{ flower.flowering_time|title }}</p>
                                 <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
@@ -44,7 +44,7 @@
                                     <p>Type: Wildflower</p>
                                     <p>Locations: {{ flower.location }}</p>
                                 {% else %}
-                                    <p>Occasions: </p>
+                                    <p>Occasions: {{ flower.occasions }}</p>
                                 {% endif %}
                                 <p>Flowering Time: {{ flower.flowering_time|title }}</p>
                                 <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
