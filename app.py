@@ -51,6 +51,7 @@ def add_flower():
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "location": request.form.get("location"),
+            "occasions": request.form.get("occasions"),
             "affiliate_1": "https://howbertandmays.ie/",
             "affiliate_2": "https://www.knocknacarraflorists.ie/"
         }
