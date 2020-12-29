@@ -34,11 +34,8 @@ def search():
 @app.route("/get_inspired")
 def get_inspired():
     db_length = len(list(mongo.db.flowers.find()))
-    rand_int = randint(1, db_length + 1)
-    print(db_length)
-    print(rand_int)
+    rand_int = randint(1, db_length)
     flower = mongo.db.flowers.find_one({"key": str(rand_int)})
-    print(flower)
     user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(flower["_id"])}))
     if session:
         current_user = mongo.db.users.find_one({"email": session["user"]})
