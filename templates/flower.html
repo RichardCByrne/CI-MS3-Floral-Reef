@@ -9,22 +9,6 @@
 {% block content %}
 
     <div class="container">
-        <!-- Modal referenced from https://stackoverflow.com/questions/25023199/in-bootstrap-open-enlarge-image-in-modal -->
-        <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">{{ flower.flower_name|title }}</h4>
-                    </div>
-                    <div class="modal-body">
-                        <img src="" id="imagepreview" style="width: 400px; height: 264px;">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="flower-container">
             <div class="row">
                 <!-- Image -->
@@ -57,37 +41,39 @@
                 </div>
             </div>
             <!-- Flower Info -->
-            <div class="row">
-                <div class="col">
-                    <h4>Flower Info</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Family:</h5>
-                    <p>{{ flower.family|title }}</p>
-                </div>
-                {% if flower.is_wildflower == "off" %}
-                    <div class="col-md-6">
-                        <h5>Occasions:</h5>
-                        <p>{{ flower.occasions|title }}</p>
+            <div class="flower-info">
+                <div class="row">
+                    <div class="col">
+                        <h4>Flower Info</h4>
                     </div>
-                {% endif %}
-                <div class="col-md-6">
-                    <h5>Flowering Time:</h5>
-                    <p>{{ flower.flowering_time }}</p>
                 </div>
-                <div class="col-md-6">
-                    <h5>Irish Name:</h5>
-                    <p>{{ flower.irish_name|title }}</p>
-                </div>
-                <div class="col-md-6">
-                    {% if flower.is_wildflower == "on" %}
-                        <h5>Locations Found:</h5>
-                        <p>{{ flower.location }}</p>
-                    {% else %}
-
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Family:</h5>
+                        <p>{{ flower.family|title }}</p>
+                    </div>
+                    {% if flower.is_wildflower == "off" %}
+                        <div class="col-md-6">
+                            <h5>Occasions:</h5>
+                            <p>{{ flower.occasions|title }}</p>
+                        </div>
                     {% endif %}
+                    <div class="col-md-6">
+                        <h5>Flowering Time:</h5>
+                        <p>{{ flower.flowering_time }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Irish Name:</h5>
+                        <p>{{ flower.irish_name|title }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        {% if flower.is_wildflower == "on" %}
+                            <h5>Locations Found:</h5>
+                            <p>{{ flower.location }}</p>
+                        {% else %}
+    
+                        {% endif %}
+                    </div>
                 </div>
             </div>
             <!-- User Images -->

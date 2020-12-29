@@ -63,6 +63,10 @@ a:hover {
     color: #C9AD5D;
 }
 
+strong {
+    font-weight: 900;
+}
+
 
 /* --------------------------------Components */
 .btn.btn-lg {
@@ -253,7 +257,7 @@ a.see-more {
 
 /* --------------------------------Flower.html */
 .flower-container {
-    margin: 5rem;
+    margin:3.5rem 1rem 1rem 1rem;
 }
 
 .flower-container img {
@@ -267,6 +271,10 @@ a.see-more {
 .flower-affiliate-link {
     font-size: 1.1rem;
     display: block;
+}
+
+.flower-info h5 {
+    text-decoration: underline #3a8573 solid;
 }
 
 .image-container {
@@ -297,9 +305,9 @@ a.see-more {
 
 .your-image {
     position: absolute;
-    top: 10%;
-    left: 2%;
-    font-size: 1.2rem;
+    top: 12%;
+    left: 3%;
+    font-size: 1rem;
     color: white;
     padding: 1rem;
     background-color: rgb(190, 146, 25);
@@ -342,8 +350,8 @@ form label {
 
 
 /* ------------------------------------------------------Media Queries */
-/* --------------------------------Min Width 1201px */
-@media screen and (min-width: 1200px) {
+/* --------------------------------Min Width 576px */
+@media screen and (min-width: 576px) {
     
 }
 
@@ -383,9 +391,29 @@ form label {
         font-size: 3.5rem;
         border-bottom: #C9AD5D 2px solid;
     }
+
+    /* Flower.html */
+    .flower-container {
+        margin: 5rem;
+    }
+
+    .flower-info h4 {
+        margin-top: 2rem;
+    }
+
+    .your-image {
+        top: 9.5%;
+        left: 5%;
+        font-size: 1rem;
+    }
 }
 
-/* --------------------------------Min Width 576px */
-@media screen and (min-width: 576px) {
-
+/* --------------------------------Min Width 1200px */
+@media screen and (min-width: 1200px) {
+    /* Flower.html */
+    .your-image {
+        top: 10%;
+        left: 4%;
+        font-size: 1.1rem;
+    }
 }
