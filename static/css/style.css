@@ -28,27 +28,27 @@ h6 {
 }
 
 h1 {
-    font-size: 6rem;
-}
-
-h2 {
-    font-size: 5rem;
-}
-
-h3 {
     font-size: 4rem;
 }
 
-h4 {
+h2 {
     font-size: 3rem;
 }
 
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2.25rem;
+}
+
 h5, .lead {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h6 {
-    font-size: 1.7rem;
+    font-size: 1rem;
 }
 
 p {
@@ -325,7 +325,51 @@ form label {
     margin: 2rem 0;
 }
 
-
+/* --------------------------------404.html */
 .error-container {
     margin: 5rem;
+}
+
+
+/* ------------------------------------------------------Media Queries */
+/* --------------------------------Min Width 1201px */
+@media screen and (min-width: 1200px) {
+    
+}
+
+/* --------------------------------Min Width 768px */
+@media screen and (min-width: 768px) {
+    /* General */
+    h1 {
+        font-size: 6rem;
+    }
+    
+    h2 {
+        font-size: 5rem;
+    }
+    
+    h3 {
+        font-size: 4rem;
+    }
+    
+    h4 {
+        font-size: 3rem;
+    }
+    
+    h5, .lead {
+        font-size: 2rem;
+    }
+    
+    h6 {
+        font-size: 1.7rem;
+    }
+    
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+/* --------------------------------Min Width 576px */
+@media screen and (min-width: 576px) {
+
 }
