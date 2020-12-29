@@ -11,8 +11,8 @@
     <h1 class="text-center register">Add a Flower</h1>
     
     <div class="row">
-        <div class="col-1 col-md-3"></div>
-        <div class="col-10 col-md-6">
+        <div class="col-1 col-lg-3"></div>
+        <div class="col-10 col-lg-6">
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('add_flower') }}">
                 <div class="row mb-4">
@@ -32,6 +32,9 @@
                             <label class="form-label" for="irish_name">Irish Name</label>
                         </div>
                     </div>
+                </div>
+
+                <div class="row mb-4">
                     <!-- Latin Name -->
                     <div class="col">
                         <div class="form-outline">
@@ -40,13 +43,14 @@
                             <label class="form-label" for="latin_name">Latin Name</label>
                         </div>
                     </div>
-                </div>
-    
-                <!-- Family -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
-                        minlength="3" maxlength="30" required />
-                    <label class="form-label" for="family">Flower Family</label>
+                    <!-- Family -->
+                    <div class="col">
+                        <div class="form-outline mb-4">
+                            <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
+                                minlength="3" maxlength="30" required />
+                            <label class="form-label" for="family">Flower Family</label>
+                        </div>
+                    </div>
                 </div>
     
                 <!-- Flowering Time -->
@@ -100,6 +104,7 @@
                 </div>
             </form>
         </div>
+        <div class="col-1 col-lg-3"></div>
     </div>
 
 {% endblock %}
