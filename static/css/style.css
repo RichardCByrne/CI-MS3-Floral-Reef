@@ -324,3 +324,8 @@ form label {
     height: auto;
     margin: 2rem 0;
 }
+
+
+.error-container {
+    margin: 5rem;
+}
