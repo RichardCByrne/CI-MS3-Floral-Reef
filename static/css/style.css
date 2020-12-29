@@ -96,7 +96,9 @@ strong {
 .form-submit-btn {
     color: white;
     background-color: #c7ae6b;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    padding: .84rem 1.25rem;
 }
 
 .form-submit-btn:hover {
@@ -106,7 +108,8 @@ strong {
 .cancel-button {
     color: white;
     background-color: crimson;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 .cancel-button:hover {
@@ -314,6 +317,15 @@ a.see-more {
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
 }
 
+/* --------------------------------Edit_Flower.html */
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+
 /* --------------------------------Register.html */
 .register {
     margin-top: 5rem;
@@ -352,7 +364,7 @@ form label {
 /* ------------------------------------------------------Media Queries */
 /* --------------------------------Min Width 576px */
 @media screen and (min-width: 576px) {
-    
+
 }
 
 /* --------------------------------Min Width 768px */

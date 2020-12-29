@@ -11,43 +11,49 @@
     <h1 class="text-center register">Edit Flower</h1>
     
     <div class="row">
-        <div class="col-1 col-md-3"></div>
-        <div class="col-10 col-md-6">
+        <div class="col-1 col-lg-3"></div>
+        <div class="col-10 col-lg-6">
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('edit_flower', flower_id=flower._id) }}">
                 <div class="row mb-4">
                     <!-- Flower Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="flower_name" name="flower_name" class="form-control"
-                                placeholder="e.g. Agrimony" value="{{ flower.flower_name|title }}" minlength="3" maxlength="30" required />
+                            <input type="text" id="flower_name" name="flower_name" class="form-control" placeholder="e.g. Agrimony"
+                                value="{{ flower.flower_name|title }}" minlength="3" maxlength="30" required />
                             <label class="form-label" for="flower_name">Flower Name</label>
                         </div>
                     </div>
                     <!-- Irish Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="irish_name" name="irish_name" class="form-control"
-                                placeholder="e.g. Marbhdhraighean" value="{{ flower.irish_name|title }}" minlength="3" maxlength="30" />
+                            <input type="text" id="irish_name" name="irish_name" class="form-control" placeholder="e.g. Marbhdhraighean"
+                                value="{{ flower.irish_name|title }}" minlength="3" maxlength="30" />
                             <label class="form-label" for="irish_name">Irish Name</label>
                         </div>
                     </div>
+                </div>
+                
+                <div class="row mb-4">
                     <!-- Latin Name -->
                     <div class="col">
                         <div class="form-outline">
                             <input type="text" id="latin_name" name="latin_name" class="form-control"
-                                placeholder="e.g. Agrimonia Eupatoria" value="{{ flower.latin_name|title }}" minlength="3" maxlength="30" required />
+                                placeholder="e.g. Agrimonia Eupatoria" value="{{ flower.latin_name|title }}" minlength="3"
+                                maxlength="30" required />
                             <label class="form-label" for="latin_name">Latin Name</label>
+                        </div>
+                    </div>
+                    <!-- Family -->
+                    <div class="col">
+                        <div class="form-outline mb-4">
+                            <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
+                                value="{{ flower.family|title }}" minlength="3" maxlength="30" required />
+                            <label class="form-label" for="family">Flower Family</label>
                         </div>
                     </div>
                 </div>
     
-                <!-- Family -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae" value="{{ flower.family|title }}" 
-                        minlength="3" maxlength="30" required />
-                    <label class="form-label" for="family">Flower Family</label>
-                </div>
     
                 <!-- Flowering Time -->
                 <div class="form-outline mb-4">
@@ -123,6 +129,7 @@
                 </div>
             </form>
         </div>
+        <div class="col-1 col-lg-3"></div>
     </div>
 
 {% endblock %}
