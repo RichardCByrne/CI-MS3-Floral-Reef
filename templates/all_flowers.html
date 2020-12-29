@@ -35,7 +35,7 @@
                 </div>
             {% else %}
                 <div class="container">
-                    <div class="flowers-container-right">
+                    <div class="flowers-container-right d-none">
                         <div class="row">
                             <div class="col-md-6">
                                 <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
@@ -51,6 +51,25 @@
                             </div>
                             <div class="col-md-6 text-center">
                                 <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flowers-container-left-mobile d-block">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                            </div>
+                            <div class="col-md-6">
+                                <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                                <p><em>{{ flower.latin_name|upper }}</em></p>
+                                {% if flower.is_wildflower == "on" %}
+                                    <p>Type: Wildflower</p>
+                                    <p>Locations: {{ flower.location }}</p>
+                                {% else %}
+                                    <p>Occasions: {{ flower.occasions }}</p>
+                                {% endif %}
+                                <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                                <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
                             </div>
                         </div>
                     </div>

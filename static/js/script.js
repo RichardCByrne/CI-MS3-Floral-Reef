@@ -23,4 +23,16 @@ $(document).ready(function(){
             $(".occasions").removeClass("d-none")
         }
     })
+
+    if(screen.width < 768) {
+        $(".flowers-container-right").removeClass("d-block");
+        $(".flowers-container-right").addClass("d-none");
+        $(".flowers-container-left-mobile").removeClass("d-none");
+        $(".flowers-container-left-mobile").addClass("d-block");
+    } else {
+        $(".flowers-container-right").removeClass("d-none");
+        $(".flowers-container-right").addClass("d-block");
+        $(".flowers-container-left-mobile").removeClass("d-block");
+        $(".flowers-container-left-mobile").addClass("d-none");
+    }
 })

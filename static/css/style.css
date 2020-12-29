@@ -189,12 +189,13 @@ h4.lead {
 
 /* --------------------------------All_Flowers.html */
 #all-flowers {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     border-bottom: #C9AD5D 2px solid;
+    margin-bottom: 5rem;
 }
 
-.flowers-container-left, .flowers-container-right {
-    margin: 5rem;
+.flowers-container-left, .flowers-container-left-mobile, .flowers-container-right {
+    margin: 1rem 1rem 3rem 1rem;
 }
 
 .flowers-container-left h4 a, .flowers-container-right h4 a {
@@ -215,6 +216,15 @@ h4.lead {
     max-height: 25rem;
     height: auto;
     padding: 0 0 2rem 2rem;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.flowers-container-left-mobile img {
+    width: 100%;
+    max-height: 25rem;
+    height: auto;
+    padding: 0 2rem 2rem 0;
     overflow: hidden;
     object-fit: cover;
 }
@@ -366,6 +376,12 @@ form label {
     
     p {
         font-size: 1.4rem;
+    }
+
+    /* All_Flowers.html */
+    #all-flowers {
+        font-size: 3.5rem;
+        border-bottom: #C9AD5D 2px solid;
     }
 }
 
