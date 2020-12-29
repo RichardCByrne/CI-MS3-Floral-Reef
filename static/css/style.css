@@ -8,6 +8,7 @@
     outline: 0;
     vertical-align: baseline;
     background: transparent;
+    overflow-x: hidden;
 }
 
 body {
