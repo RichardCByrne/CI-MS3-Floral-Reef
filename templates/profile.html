@@ -10,8 +10,8 @@
 
     <!-- References from https://mdbootstrap.com/docs/standard/components/cards/#subsection-simple -->
     <div class="row profile">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 card">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 card">
             <div class="card-body">
                 <h3 class="text-center">
                     {{ name.capitalize() }}'s Profile
@@ -22,14 +22,16 @@
                 </h6>
                 <br>
                 <h5>Your Images</h5>
-                <div>
+                <div class="row">
                     {% for image in user_images %}
-                        <img class="profile-images" src="{{ image.image_source }}" alt="{{ image.description }}">
+                            <div class="col-6 col-md-4">
+                                <img class="d-inline-flex profile-images" src="{{ image.image_source }}" alt="{{ image.description }}">
+                            </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-2"></div>
     </div>
 
 {% endblock %}
