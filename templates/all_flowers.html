@@ -12,7 +12,7 @@
     {% if flowers|length > 0 %}
         {% for flower in flowers %}
             {% if loop.index % 2 != 0 %}
-                <div class="container">
+                <section class="container">
                     <div class="flowers-container-left">
                         <div class="row">
                             <div class="col-md-6 text-center">
@@ -32,9 +32,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             {% else %}
-                <div class="container">
+                <section class="container">
                     <div class="flowers-container-right d-none">
                         <div class="row">
                             <div class="col-md-6">
@@ -73,18 +73,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             {% endif %}
         {% endfor %}
     {% else %}
-        <div class="row">
+        <section class="row">
             <div class="col text-center m-4">
                 <h4>No results found.</h4>
                 <form action="{{ url_for('search') }}" method="post" class="text-center">
                     <input type="search" name="query" id="query" minlength="3" class="btn info btn-lg m-2" placeholder="Search again" required>
                 </form>
             </div>
-        </div>
+        </section>
     {% endif %}
 
 {% endblock %}

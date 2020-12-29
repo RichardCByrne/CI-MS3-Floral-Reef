@@ -10,7 +10,7 @@
 
     <div class="container">
         <div class="flower-container">
-            <div class="row">
+            <section class="row">
                 <!-- Image -->
                 <div class="col-md-6 text-center">
                     <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
@@ -39,9 +39,9 @@
                         {% endif %}
                     {% endif %}
                 </div>
-            </div>
+            </section>
             <!-- Flower Info -->
-            <div class="flower-info">
+            <section class="flower-info">
                 <div class="row">
                     <div class="col">
                         <h4>Flower Info</h4>
@@ -75,40 +75,42 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- User Images -->
             {% if user_images %}
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4>Images
-                            {% if session.user %}
-                                <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your Image!</a></p>
-                            {% else %}
-                                <p>(<a href="{{ url_for('login') }}">Log in</a> to add your own images!)</p>
-                            {% endif %}
-                        </h4>
+                <section>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Images
+                                {% if session.user %}
+                                    <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your Image!</a></p>
+                                {% else %}
+                                    <p>(<a href="{{ url_for('login') }}">Log in</a> to add your own images!)</p>
+                                {% endif %}
+                            </h4>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <!-- Displays all user-submitted images of the flower with the user-submitted description as the alt tag -->
-                        {% for image in user_images %}
-                            {% if image in current_user_images %}
-                                <div class="image-container">
-                                    <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
-                                    <p class="your-image">Your image</p>
-                                    <a href="{{ url_for('delete_user_image', image_id=image._id) }}" class="btn user-image-delete-btn d-none">Delete</a>
-                                </div>
-                            {% else %}
-                                <div class="image-container">
-                                    <img src="{{ image.image_source }}" alt="{{ image.description }}">
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                    <div class="row">
+                        <div class="col">
+                            <!-- Displays all user-submitted images of the flower with the user-submitted description as the alt tag -->
+                            {% for image in user_images %}
+                                {% if image in current_user_images %}
+                                    <div class="image-container">
+                                        <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
+                                        <p class="your-image">Your image</p>
+                                        <a href="{{ url_for('delete_user_image', image_id=image._id) }}" class="btn user-image-delete-btn d-none">Delete</a>
+                                    </div>
+                                {% else %}
+                                    <div class="image-container">
+                                        <img src="{{ image.image_source }}" alt="{{ image.description }}">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
+                </section>
             {% else %}
-            <div class="row">
+            <section class="row">
                 <div class="col-md-6">
                     <h4>Images
                         <p>No user images were found.</p>
@@ -121,11 +123,6 @@
                 </div>
             </div>
             {% endif %}
-            <div class="row">
-                <div class="col">
-                    
-                </div>
-            </div>
         </div>
     </div>
 
