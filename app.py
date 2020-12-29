@@ -210,7 +210,7 @@ def get_profile(email):
         {"email": email}
     )
     current_user = mongo.db.users.find_one({"email": session["user"]})
-    current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
+    current_user_images = list(mongo.db.user_images.find({"user_id": current_user["_id"]}))
     return render_template("profile.html", name=user["first_name"], user_images=current_user_images)
 
 
