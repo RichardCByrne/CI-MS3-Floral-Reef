@@ -194,7 +194,7 @@ def register():
     if request.method == "POST":
         try:
             existing_user = mongo.db.users.find_one(
-                {"email": request.form.get("email").lower()})
+            {"email": request.form.get("email").lower()})
 
             if existing_user:
                 flash("Email already in use.")
@@ -211,7 +211,7 @@ def register():
 
             session["user"] = request.form.get("email").lower()
             flash("Registration successful!")
-            return redirect(url_for("profile", username=session["user"]))
+            return redirect(url_for("get_profile", email=session["user"]))
         except:
             return render_template("404.html")
 
