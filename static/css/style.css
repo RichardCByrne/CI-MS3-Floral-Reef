@@ -302,6 +302,10 @@ a.see-more {
     display: block;
 }
 
+.flower-affiliate-link:last-of-type {
+    margin-bottom: 2rem;
+}
+
 .flower-info h5 {
     text-decoration: underline #3a8573 solid;
 }
@@ -472,6 +476,10 @@ form label {
     /* Flower.html */
     .flower-container {
         margin:5rem 1rem 1rem 1rem;
+    }
+
+    .flower-affiliate-link:last-of-type {
+        margin-bottom: 0;
     }
 
     .flower-info h4 {
