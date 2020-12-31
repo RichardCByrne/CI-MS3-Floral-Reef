@@ -1,14 +1,4 @@
 $(document).ready(function(){
-    // $(".current-user-image").hover(function(){
-    //     $(this).css("filter", "brightness(60%)");
-    //     $(this).siblings("a").removeClass("d-none");
-    //     $(this).siblings("a").addClass("d-inline");
-    // },function(){
-    //     $(this).css("filter", "brightness(100%)");
-    //     $(this).siblings("a").removeClass("d-inline");
-    //     $(this).siblings("a").addClass("d-none");
-    // })
-
     // Add Flower Form
     $("input[id='is_wildflower']").click(function() {
         if($(this).is(":checked")){
