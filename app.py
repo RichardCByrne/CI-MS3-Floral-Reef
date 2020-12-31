@@ -65,46 +65,44 @@ def get_all_flowers():
 
 @app.route("/flower/<flower_id>")
 def flower(flower_id):
-    try:
-        flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
-        user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
-        if session:
-            current_user = mongo.db.users.find_one({"email": session["user"]})
-            current_user_images = list(mongo.db.user_images.find({"user_id": ObjectId(current_user["_id"])}))
-            return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
-        else:
-            return render_template("flower.html", flower=flower, user_images=user_images)
-    except:
-        return render_template("404.html")
+    flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
+    user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
+    if session:
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        current_user_images = list(mongo.db.user_images.find({"user_id": ObjectId(current_user["_id"])}))
+        current_user_created_flower = True if ObjectId(current_user["_id"]) == ObjectId(flower["created_by"]) else False
+        print(current_user_created_flower)
+        return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images, current_user_created_flower=current_user_created_flower)
+    else:
+        return render_template("flower.html", flower=flower, user_images=user_images)
 
 
 @app.route("/add_flower", methods=["GET", "POST"])
 def add_flower():
     if request.method == "POST":
-        try:
-            db_length = len(list(mongo.db.flowers.find()))
-            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
-            new_flower = {
-                "flower_name": request.form.get("flower_name"),
-                "latin_name": request.form.get("latin_name"),
-                "irish_name": request.form.get("irish_name"),
-                "family": request.form.get("family"),
-                "key": db_length + 1,
-                "is_wildflower": is_wildflower,
-                "flowering_time": request.form.get("flowering_time"),
-                "image_url": request.form.get("image_url"),
-                "description": request.form.get("description"),
-                "location": request.form.get("location"),
-                "occasions": request.form.get("occasions"),
-                "affiliate_1": "https://howbertandmays.ie/",
-                "affiliate_2": "https://www.knocknacarraflorists.ie/"
-            }
+        db_length = len(list(mongo.db.flowers.find()))
+        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "created_by": ObjectId(current_user["_id"]),
+            "key": db_length + 1,
+            "is_wildflower": is_wildflower,
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "occasions": request.form.get("occasions"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
 
-            mongo.db.flowers.insert_one(new_flower)
-            flash("Your flower has been added!\nThank you for your contribution.")
-            return redirect(url_for("get_all_flowers"))
-        except:
-            return render_template("404.html")
+        mongo.db.flowers.insert_one(new_flower)
+        flash("Your flower has been added!\nThank you for your contribution.")
+        return redirect(url_for("get_all_flowers"))
 
     try:
         return render_template("add_flower.html")
@@ -115,28 +113,25 @@ def add_flower():
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
     if request.method == "POST":
-        try:
-            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
-            new_flower = {
-                "flower_name": request.form.get("flower_name"),
-                "latin_name": request.form.get("latin_name"),
-                "irish_name": request.form.get("irish_name"),
-                "family": request.form.get("family"),
-                "is_wildflower": is_wildflower,
-                "flowering_time": request.form.get("flowering_time"),
-                "image_url": request.form.get("image_url"),
-                "description": request.form.get("description"),
-                "location": request.form.get("location"),
-                "occasions": request.form.get("occasions"),
-                "affiliate_1": "https://howbertandmays.ie/",
-                "affiliate_2": "https://www.knocknacarraflorists.ie/"
-            }
+        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "is_wildflower": is_wildflower,
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "occasions": request.form.get("occasions"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
 
-            mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
-            flash("Flower successfully updated!")
-            return redirect(url_for('flower', flower_id = flower_id))
-        except:
-            return render_template("404.html")
+        mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
+        flash("Flower successfully updated!")
+        return redirect(url_for('flower', flower_id=flower_id))
 
     try:
         flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})

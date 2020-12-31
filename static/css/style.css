@@ -113,6 +113,11 @@ strong {
     background-color: #C9AD5D;
 }
 
+.delete-btn {
+    background-color: crimson;
+    color: white;
+}
+
 .form-submit-btn {
     color: white;
     background-color: #c7ae6b;
