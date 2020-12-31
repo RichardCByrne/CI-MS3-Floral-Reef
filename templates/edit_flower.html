@@ -86,7 +86,7 @@
                     <div class="form-outline location mb-4 d-block">
                         <input type="text" id="location" name="location" class="form-control"
                             placeholder="e.g. Found on dry grassland, hedgerows, roadsides. Prefers calcareous soils."
-                            minlength="10" maxlength="100" />
+                            value="{{ flower.location }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="location">Where can it be found?</label>
                     </div>
 
@@ -94,7 +94,7 @@
                     <div class="form-outline mb-4 occasions d-none">
                         <input type="text" id="occasions" name="occasions" class="form-control"
                             placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..."
-                            minlength="10" maxlength="100" />
+                            value="{{ flower.occasions }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="occasions">What occassion(s) is it used for?</label>
                     </div>
                 {% else %}
@@ -102,7 +102,7 @@
                     <div class="form-outline location mb-4 d-none">
                         <input type="text" id="location" name="location" class="form-control"
                             placeholder="e.g. Found on dry grassland, hedgerows, roadsides. Prefers calcareous soils."
-                            minlength="10" maxlength="100" />
+                            value="{{ flower.location }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="location">Where can it be found?</label>
                     </div>
 
@@ -110,14 +110,14 @@
                     <div class="form-outline mb-4 occasions d-block">
                         <input type="text" id="occasions" name="occasions" class="form-control"
                             placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..."
-                            minlength="10" maxlength="100" />
+                            value="{{ flower.occasions }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="occasions">What occassion(s) is it used for?</label>
                     </div>
                 {% endif %}
     
                 <!-- Image Url -->
                 <div class="form-outline mb-4">
-                    <input type="url" id="image_url" name="image_url" class="form-control" placeholder="https://..."
+                    <input type="url" id="image_url" name="image_url" class="form-control" value="{{ flower.image_url }}" placeholder="https://..."
                         required />
                     <label class="form-label" for="image_url">Image URL</label>
                 </div>
