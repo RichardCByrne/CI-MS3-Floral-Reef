@@ -79,6 +79,21 @@ strong {
     border-radius: .6rem;
 }
 
+.search-input {
+    border: #DDDEBD solid 1px;
+    border-radius: 5%;
+    padding: 0 .25rem;
+    margin: .5rem .25rem .25rem .25rem;
+    color: #DDDEBD;
+    font-size: 1.1rem;
+}
+
+.search-btn {
+    margin: .75rem .5rem .5rem .5rem;
+    color: #DDDEBD;
+    font-size: 1rem;
+}
+
 .flashes {
     margin-top: 5rem;
     margin-bottom: -3rem;
@@ -368,7 +383,11 @@ a.see-more {
 /* --------------------------------Register.html */
 .register {
     margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.have-you-checked {
+    margin-bottom: 2.5rem;
 }
 
 form label {
