@@ -40,16 +40,17 @@ def search():
 @app.route("/get_inspired")
 def get_inspired():
     try:
-        db_length = len(list(mongo.db.flowers.find()))
-        rand_int = randint(1, db_length)
-        flower = mongo.db.flowers.find_one({"key": str(rand_int)})
-        user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(flower["_id"])}))
+        random_flower = {}
+        with mongo.db.flowers.aggregate([{"$sample": {"size": 1}}]) as cursor:
+            for flower in cursor:
+                random_flower = flower
+        user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(random_flower["_id"])}))
         if session:
             current_user = mongo.db.users.find_one({"email": session["user"]})
             current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
-            return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images)
+            return render_template("flower.html", flower=random_flower, user_images=user_images, current_user_images=current_user_images)
         else:
-            return render_template("flower.html", flower=flower, user_images=user_images)
+            return render_template("flower.html", flower=random_flower, user_images=user_images)
     except:
         return render_template("404.html")
 
