@@ -1,13 +1,13 @@
 $(document).ready(function(){
-    $(".current-user-image").hover(function(){
-        $(this).css("filter", "brightness(60%)");
-        $(this).siblings("a").removeClass("d-none");
-        $(this).siblings("a").addClass("d-inline");
-    },function(){
-        $(this).css("filter", "brightness(100%)");
-        $(this).siblings("a").removeClass("d-inline");
-        $(this).siblings("a").addClass("d-none");
-    })
+    // $(".current-user-image").hover(function(){
+    //     $(this).css("filter", "brightness(60%)");
+    //     $(this).siblings("a").removeClass("d-none");
+    //     $(this).siblings("a").addClass("d-inline");
+    // },function(){
+    //     $(this).css("filter", "brightness(100%)");
+    //     $(this).siblings("a").removeClass("d-inline");
+    //     $(this).siblings("a").addClass("d-none");
+    // })
 
     // Add Flower Form
     $("input[id='is_wildflower']").click(function() {
@@ -24,6 +24,7 @@ $(document).ready(function(){
         }
     })
 
+    // All_Flowers 
     if(screen.width < 768) {
         $(".flowers-container-right").removeClass("d-block");
         $(".flowers-container-right").addClass("d-none");

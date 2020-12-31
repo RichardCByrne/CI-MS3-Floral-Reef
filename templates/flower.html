@@ -76,12 +76,13 @@
                     </div>
                 </div>
             </section>
+            <br>
             <!-- User Images -->
             {% if user_images %}
                 <section>
                     <div class="row">
                         <div class="col-md-6">
-                            <h4>Images
+                            <h4>User Images
                                 {% if session.user %}
                                     <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your Image!</a></p>
                                 {% else %}
@@ -95,13 +96,15 @@
                             <!-- Displays all user-submitted images of the flower with the user-submitted description as the alt tag -->
                             {% for image in user_images %}
                                 {% if image in current_user_images %}
-                                    <div class="image-container">
+                                    <!-- Referenced from https://codepen.io/philcheng/pen/YWyYwG -->
+                                    <div class="user-image-container">
                                         <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
                                         <p class="your-image">Your image</p>
-                                        <a href="{{ url_for('delete_user_image', image_id=image._id) }}" class="btn user-image-delete-btn d-none">Delete</a>
+                                        <div class="overlay"></div>
+                                        <a href="{{ url_for('delete_user_image', image_id=image._id) }}" class="btn user-image-delete-btn">Delete</a>
                                     </div>
                                 {% else %}
-                                    <div class="image-container">
+                                    <div class="user-image-container">
                                         <img src="{{ image.image_source }}" alt="{{ image.description }}">
                                     </div>
                                 {% endif %}
