@@ -163,6 +163,10 @@ strong {
     flex-grow: unset;
 }
 
+.navbar-toggler i {
+    color: #DDDEBD;
+}
+
 nav a {
     font-size: 1.1rem;
     color: #DDDEBD;
