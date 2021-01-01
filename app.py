@@ -31,8 +31,11 @@ def home():
 def search():
     try:
         query = request.form.get("query").lower()
-        flowers = list(mongo.db.flowers.find({"$text": {"$search": query}}))
-        return render_template("all_flowers.html", flowers=flowers)
+        if not query.isalpha():
+            flash("Invalid search query.")
+        else:
+            flowers = list(mongo.db.flowers.find({"$text": {"$search": query}}))
+            return render_template("all_flowers.html", flowers=flowers)
     except:
         return render_template("404.html")
 
