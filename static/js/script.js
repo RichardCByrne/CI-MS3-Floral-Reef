@@ -2,17 +2,17 @@ $(document).ready(function(){
     // Add Flower Form
     $("input[id='is_wildflower']").click(function() {
         if($(this).is(":checked")){
-            $(".location").addClass("d-block")
-            $(".location").removeClass("d-none")
-            $(".occasions").addClass("d-none")
-            $(".occasions").removeClass("d-block")
+            $(".location").addClass("d-block");
+            $(".location").removeClass("d-none");
+            $(".occasions").addClass("d-none");
+            $(".occasions").removeClass("d-block");
         } else {
-            $(".location").addClass("d-none")
-            $(".location").removeClass("d-block")
-            $(".occasions").addClass("d-block")
-            $(".occasions").removeClass("d-none")
+            $(".location").addClass("d-none");
+            $(".location").removeClass("d-block");
+            $(".occasions").addClass("d-block");
+            $(".occasions").removeClass("d-none");
         }
-    })
+    });
 
     // All_Flowers 
     if(screen.width < 768) {
@@ -26,4 +26,4 @@ $(document).ready(function(){
         $(".flowers-container-left-mobile").removeClass("d-block");
         $(".flowers-container-left-mobile").addClass("d-none");
     }
-})
+});
