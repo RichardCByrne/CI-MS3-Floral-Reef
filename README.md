@@ -242,6 +242,9 @@ A MongoDB index was created in order to allow the database to be queried through
     
 -   [PEP8 Online](http://pep8online.com/checkresult)
     -   The PEP8 Online Python Validator was used to check for syntax errors and PEP8 compliance in the Python code.
+
+-   [JSHINT](https://jshint.com/)
+    -   JSHint was used to check for JavaScript errors. However, due to the use of jQuery in the project, it's usefulness was limited.
     
 ### Testing User Stories from User Experience (UX) Section
 
