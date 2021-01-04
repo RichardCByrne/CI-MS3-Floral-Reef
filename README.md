@@ -8,14 +8,14 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
     
     -   First Time Visitor Goals
     
-        -   As a First Time Visitor, I want to easily understand the main purpose of the site.
+        -   As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
         -   As a First Time Visitor, I want to see what flowers are currently available on the website.
         -   As a First Time Visitor, I want to find information about a particular flower.
         -   As a First Time Visitor, I want to see photos of a specific flower.
     
     -   Returning Visitor Goals
         
-        -   As a Returning Visitor, I want to register and join the community.
+        -   As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
         -   As a Returning Visitor, I want to share my own photos to different flowers.
         -   As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
     
@@ -81,6 +81,10 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 
 -   Responsive on all device sizes
 -   Interactive elements
+-   User accounts
+-   Allows users to perform CRUD operations with a MongoDB database.
+-   'Get Inspired' button which returns and displays a random flower from the database.
+-   Search functionality
 
 ## Technologies Used
 
@@ -102,11 +106,11 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 3. [Font Awesome:](https://fontawesome.com/)
     -   Font Awesome was used to import the magnifying glass for the search bar.
     
-4. [jQuery:](https://jquery.com/)   
-    -   jQuery was used both to speed up JavaScript development, as well as being a requirement for MDBootstrap.
+4. [jQuery:](https://jquery.com/)
+    -   jQuery was used both to speed up JavaScript development, and because it was a requirement for MDBootstrap.
     
 5. [Flask:](https://flask.palletsprojects.com/en/1.1.x/)
-    -   Flask was used to develop the website to allow integration with an external database, as well as to reduce repitition in code as much as possible.
+    -   Flask was used to develop the website to allow integration with an external database, as well as to reduce repetition in code as much as possible.
     
 6. [Jinja:](https://palletsprojects.com/p/jinja/)
     -   The Jinja templating language came installed with flash and allows for quick editing of elements common to multiple, or all, pages.
@@ -130,7 +134,7 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
     -   The ObjectId method was imported from BSON in order to verify MONGODB's object ids for multiple Flask functions.
     
 13. [Balsamiq](https://balsamiq.com/)
-    -   Balsamiq was used to create the wirefames during the design process.
+    -   Balsamiq was used to create the wireframes during the design process.
     
 14. [Git](https://git-scm.com/)
     -   Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
@@ -149,12 +153,12 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 2. A new cluster and database were created.
 3. Network Access was temporarily set to 'Allow Access From Anywhere'.
 4. The MongoDB shell was downloaded and installed from [this link](https://downloads.mongodb.org/windows/mongodb-shell-windows-x86_64-4.4.2.zip).
-5. The PATH environment variable was updated to include the MongoDB "/bin" folder, that was created by the intallation of the shell.
+5. The PATH environment variable was updated to include the MongoDB "/bin" folder, that was created by the installation of the shell.
 6. "C:\mongodb" was also added to the PATH environment variable to allow access to 'mongod.exe' from anywhere outside the '/bin' directory.
 7. A new terminal was created in VS Code, where 'mongod' was run.
 8. Back on the mongodb website, the cluster's "Connect" button was run.
 9. The connection string was copied from step 3.
-10. Then another new terminal was created inside VS Code where the copied code was pasted, edited to include databsae name and then run.
+10. Then another new terminal was created inside VS Code where the copied code was pasted, edited to include database name and then run.
 11. The password for the database was inputted.
 
 ### Setting Up MongoDB within Python
@@ -163,9 +167,9 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 2. Selected 'Connect your application' as the connection method.
 3. Python was selected as the driver and version 3.6 or later was chosen.
 4. Connection string was copied.
-5. A .gitignore and env.py file were created, and the env.py file was added to the .gitignore file so as to prevent any sensitive information being uploaded to GitHub.
-6. An os environement default variable called "MONGO_URI" was declared with a value of the Connection String.
-7. A 'mongo_project.py' file was created and the following code was added:
+5. A .gitignore and env.py file were created, and the env.py file was added to the .gitignore file to prevent any sensitive information being uploaded to GitHub.
+6. An os environment default variable called "MONGO_URI" was declared with a value of the Connection String.
+7. A 'mongo_project.py' file was created, and the following code was added:
 
    ```python
     # Imports relevant libraries
@@ -234,3 +238,68 @@ A MongoDB index was created in order to allow the database to be queried through
 -   ExtendsClass [Python Tester](https://extendsclass.com/python-tester.html)
     -   The ExtendsClass Python Tester was used to check for syntax errors in the Python code. 
     
+### Testing User Stories from User Experience (UX) Section
+
+- First Time Visitor Goals
+
+    -   As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
+        
+        -   Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath, there is a hero image with text and a "Get Inspired" call-to-action button that shows the user a random flower.
+        -   The text within the hero image on the homepage clearly defines what the website is and isn't, in order to set users' expectations accordingly.
+        -   The intended path for the user to go down is to click he 'Get Inspired' button to see how the primary data is laid out. From there, they can either create an account and start contributing or view more flowers via the navbar.
+        -   There is a search bar and responsive navbar that facilitate simple and quick user navigation.
+        
+    -   As a First Time Visitor, I want to see what flowers are currently available on the website.
+
+        -   From the homepage, users can click on the 'Get Inspired' button to be taken to a random flower.
+        -   Users can view all the flowers on the website by clicking on the 'Flowers' tab in the navbar.
+        
+    -   As a First Time Visitor, I want to find information about a particular flower.
+        
+        -   There is a search bar and responsive navbar that facilitate simple and quick user navigation, allowing users to find a flower by name, latin name, irish name or by the date it was uploaded to the website.
+        -   Each flower profile contains multiple information fields about the flower, including its flowering time, whether it's considered a wildflower, locations it can be found in, and occasions it is typically used for.
+
+    -   As a First Time Visitor, I want to see photos of a specific flower.
+    
+        -   Each flower has a main image by which it can be identified. This is displayed both on the 'Flowers' page, and in each flower's profile page.
+        -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
+
+-   Returning Visitor Goals
+    
+    -   As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
+        
+        -   The navbar contains a 'Register' and 'Log In' buttons that displays whe no user is logged in.
+        -   The 'Log In' page contains a link to the 'Register' page, in case the user hasn't created an account yet.
+        -   The 'Register' page contains a link to the 'Log In' page in case the user already has an account.
+        -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
+        -   The profile page contains a button that allows the user to edit their profile details via a pre-populated form.
+
+    -   As a Returning Visitor, I want to share my own photos to different flowers.
+        
+        -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
+        -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
+    
+    -   As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
+    
+        -   There is a dedicated 'Add Flower' button within the navbar, that allows logged-in users to add a flower to the website/database via a form.
+    
+-   Frequent Visitor Goals
+
+    -   As a frequent visitor, I want to be able to easily edit and delete the content that I contribute to the site.
+    
+        -   Flowers can be edited by the user who created the flower. This prevents any user from changing another user's contribution.
+        -   Flowers can be deleted by the user who created it from the flower's profile page, using the 'Delete Flower' button.
+        -   Each user-submitted image contains a delete button that only displays for the user who submitted the image, allowing them to delete the image at their behest.
+        
+    -   As a frequent user, I want to see new content that has been added by users.
+    
+        -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
+        -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
+    
+### Further Testing
+
+-   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   A large amount of testing was done to ensure that all pages were linking correctly.
+-   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+
