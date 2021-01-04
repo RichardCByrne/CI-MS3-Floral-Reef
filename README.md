@@ -259,9 +259,13 @@ A MongoDB index was created in order to allow the database to be queried through
     2.  As a First Time Visitor, I want to see what flowers are currently available on the website.
 
         -   From the homepage, users can click on the 'Get Inspired' button to be taken to a random flower.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Get_Inspired_Button.PNG?raw=true" alt="get inspired button">
+
         -   Users can view all the flowers on the website by clicking on the 'Flowers' tab in the navbar.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Navbar.PNG?raw=true" alt="navbar not logged in">
+
     3.  As a First Time Visitor, I want to find information about a particular flower.
         
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation, allowing users to find a flower by name, latin name, irish name or by the date it was uploaded to the website.
@@ -284,9 +288,13 @@ A MongoDB index was created in order to allow the database to be queried through
         -   The 'Register' page contains a link to the 'Log In' page in case the user already has an account.
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Register.PNG?raw=true" alt="register">
         -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
+
         -   The profile page contains a button that allows the user to edit their profile details via a pre-populated form.
+        
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Edit_Profile_Button.PNG?raw=true" alt="edit profile button">
+        
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Edit_Profile.PNG?raw=true" alt="edit profile page">
+        
     2.  As a Returning Visitor, I want to share my own photos to different flowers.
         
         -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
