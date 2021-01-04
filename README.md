@@ -253,10 +253,13 @@ A MongoDB index was created in order to allow the database to be queried through
     1.  As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
         
         -   Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath, there is a hero image with text and a "Get Inspired" call-to-action button that shows the user a random flower.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Homepage.PNG?raw=true" alt="homepage">
+
         -   The text within the hero image on the homepage clearly defines what the website is and isn't, in order to set users' expectations accordingly.
         -   The intended path for the user to go down is to click he 'Get Inspired' button to see how the primary data is laid out. From there, they can either create an account and start contributing or view more flowers via the navbar.
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Search_Bar.PNG?raw=true" alt="search bar">
         
     2.  As a First Time Visitor, I want to see what flowers are currently available on the website.
@@ -273,12 +276,14 @@ A MongoDB index was created in order to allow the database to be queried through
         
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation, allowing users to find a flower by name, latin name, irish name or by the date it was uploaded to the website.
         -   Each flower profile contains multiple information fields about the flower, including its flowering time, whether it's considered a wildflower, locations it can be found in, and occasions it is typically used for.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Flower_Profile.PNG?raw=true" alt="flower profile">
 
     4.  As a First Time Visitor, I want to see photos of a specific flower.
 
         -   Each flower has a main image by which it can be identified. This is displayed both on the 'Flowers' page, and in each flower's profile page.
         -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/User_Images.PNG?raw=true" alt="user images">
 
 -   Returning Visitor Goals
@@ -287,9 +292,13 @@ A MongoDB index was created in order to allow the database to be queried through
         
         -   The navbar contains a 'Register' and 'Log In' buttons that displays whe no user is logged in.
         -   The 'Log In' page contains a link to the 'Register' page, in case the user hasn't created an account yet.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Log_In.PNG?raw=true" alt="login">
+
         -   The 'Register' page contains a link to the 'Log In' page in case the user already has an account.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Register.PNG?raw=true" alt="register">
+
         -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
 
         -   The profile page contains a button that allows the user to edit their profile details via a pre-populated form.
@@ -306,6 +315,7 @@ A MongoDB index was created in order to allow the database to be queried through
     3.  As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
 
         -   There is a dedicated 'Add Flower' button within the navbar, that allows logged-in users to add a flower to the website/database via a form.
+
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Navbar_Logged_In.PNG?raw=true" alt="navbar logged in">
     
 -   Frequent Visitor Goals
@@ -313,9 +323,12 @@ A MongoDB index was created in order to allow the database to be queried through
     1.  As a frequent visitor, I want to be able to easily edit and delete the content that I contribute to the site.
 
     -   Flowers can be edited by the user who created the flower. This prevents any user from changing another user's contribution.
+
     <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Edit_Delete_Flower_Buttons.PNG?raw=true" alt="edit and delete flower buttons">
+
     -   Flowers can be deleted by the user who created it from the flower's profile page, using the 'Delete Flower' button.
     -   Each user-submitted image contains a delete button that only displays for the user who submitted the image, allowing them to delete the image at their behest.
+    
     <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/User_Image_Delete_Button.png?raw=true" alt="user image delete button">
         
     2.  As a frequent user, I want to see new content that has been added by users.
