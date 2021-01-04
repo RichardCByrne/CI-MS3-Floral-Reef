@@ -1,7 +1,7 @@
 import os
 from random import sample, randint
 from flask import (Flask, flash, render_template,
-    redirect, request, session, url_for)
+                   redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -34,7 +34,8 @@ def search():
         if not query.isalpha():
             flash("Invalid search query.")
         else:
-            flowers = list(mongo.db.flowers.find({"$text": {"$search": query}}))
+            flowers = list(mongo.db.flowers.find(
+                {"$text": {"$search": query}}))
             return render_template("all_flowers.html", flowers=flowers)
     except:
         return render_template("404.html")
@@ -44,17 +45,25 @@ def search():
 def get_inspired():
     try:
         random_flower = {}
-        # Referenced from https://pymongo.readthedocs.io/en/stable/api/pymongo/database.html?highlight=aggregate#pymongo.database.Database.aggregate
+        # Referenced from https://pymongo.readthedocs.io/en/stable/api/
+        # pymongo/database.html?highlight=aggregate#pymongo.database.Database.aggregate
         with mongo.db.flowers.aggregate([{"$sample": {"size": 1}}]) as cursor:
             for flower in cursor:
                 random_flower = flower
-        user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(random_flower["_id"])}))
+        user_images = list(mongo.db.user_images.find(
+            {"flower_id": ObjectId(random_flower["_id"])}))
         if session:
             current_user = mongo.db.users.find_one({"email": session["user"]})
-            current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
-            return render_template("flower.html", flower=random_flower, user_images=user_images, current_user_images=current_user_images)
+            current_user_images = list(mongo.db.user_images.find(
+                {"user_id": current_user["email"]}))
+            return render_template("flower.html",
+                                   flower=random_flower,
+                                   user_images=user_images,
+                                   current_user_images=current_user_images)
         else:
-            return render_template("flower.html", flower=random_flower, user_images=user_images)
+            return render_template("flower.html",
+                                   flower=random_flower,
+                                   user_images=user_images)
     except:
         return render_template("404.html")
 
@@ -70,17 +79,27 @@ def get_all_flowers():
 
 @app.route("/flower/<flower_id>")
 def flower(flower_id):
-    try:    
+    try:
         flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
         user_images = list(mongo.db.user_images.find({"flower_id": flower_id}))
         if session:
             current_user = mongo.db.users.find_one({"email": session["user"]})
-            current_user_images = list(mongo.db.user_images.find({"user_id": ObjectId(current_user["_id"])}))
-            current_user_created_flower = True if ObjectId(current_user["_id"]) == ObjectId(flower["created_by"]) else False
+            current_user_images = list(mongo.db.user_images.find(
+                {"user_id": ObjectId(current_user["_id"])}))
+            current_user_created_flower = True if ObjectId(
+                current_user["_id"]) == ObjectId(
+                    flower["created_by"]) else False
             print(current_user_created_flower)
-            return render_template("flower.html", flower=flower, user_images=user_images, current_user_images=current_user_images, current_user_created_flower=current_user_created_flower)
+            return render_template(
+                "flower.html", flower=flower,
+                user_images=user_images,
+                current_user_images=current_user_images,
+                current_user_created_flower=current_user_created_flower)
         else:
-            return render_template("flower.html", flower=flower, user_images=user_images)
+            return render_template(
+                "flower.html",
+                flower=flower,
+                user_images=user_images)
     except:
         return render_template("404.html")
 
@@ -90,7 +109,8 @@ def add_flower():
     if request.method == "POST":
         try:
             db_length = len(list(mongo.db.flowers.find()))
-            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+            is_wildflower = "on" if request.form.get(
+                "is_wildflower") else "off"
             current_user = mongo.db.users.find_one({"email": session["user"]})
             new_flower = {
                 "flower_name": request.form.get("flower_name"),
@@ -109,7 +129,10 @@ def add_flower():
             }
 
             mongo.db.flowers.insert_one(new_flower)
-            flash("Your flower has been added!\nThank you for your contribution.")
+            flash(
+                "Your flower has been added!\n" +
+                "Thank you for your contribution."
+            )
             return redirect(url_for("get_all_flowers"))
         except:
             return render_template("404.html")
@@ -123,33 +146,35 @@ def add_flower():
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
     if request.method == "POST":
-            current_user = mongo.db.users.find_one({"email": session["user"]})
-            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
-            new_flower = {
-                "flower_name": request.form.get("flower_name"),
-                "latin_name": request.form.get("latin_name"),
-                "irish_name": request.form.get("irish_name"),
-                "family": request.form.get("family"),
-                "created_by": ObjectId(current_user["_id"]),
-                "is_wildflower": is_wildflower,
-                "flowering_time": request.form.get("flowering_time"),
-                "image_url": request.form.get("image_url"),
-                "description": request.form.get("description"),
-                "location": request.form.get("location"),
-                "occasions": request.form.get("occasions"),
-                "affiliate_1": "https://howbertandmays.ie/",
-                "affiliate_2": "https://www.knocknacarraflorists.ie/"
-            }
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+        new_flower = {
+            "flower_name": request.form.get("flower_name"),
+            "latin_name": request.form.get("latin_name"),
+            "irish_name": request.form.get("irish_name"),
+            "family": request.form.get("family"),
+            "created_by": ObjectId(current_user["_id"]),
+            "is_wildflower": is_wildflower,
+            "flowering_time": request.form.get("flowering_time"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "location": request.form.get("location"),
+            "occasions": request.form.get("occasions"),
+            "affiliate_1": "https://howbertandmays.ie/",
+            "affiliate_2": "https://www.knocknacarraflorists.ie/"
+        }
 
-            mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
-            flash("Flower successfully updated!")
+        mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
+        flash("Flower successfully updated!")
 
-            flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
-            user_images = list(mongo.db.user_images.find({"flower_id": ObjectId(flower["_id"])}))
+        flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
+        user_images = list(mongo.db.user_images.find(
+            {"flower_id": ObjectId(flower["_id"])}))
 
-            current_user = mongo.db.users.find_one({"email": session["user"]})
-            current_user_images = list(mongo.db.user_images.find({"user_id": current_user["email"]}))
-            return redirect(url_for("get_all_flowers"))
+        current_user = mongo.db.users.find_one({"email": session["user"]})
+        current_user_images = list(mongo.db.user_images.find(
+            {"user_id": current_user["email"]}))
+        return redirect(url_for("get_all_flowers"))
     try:
         flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
         return render_template("edit_flower.html", flower=flower)
@@ -172,7 +197,7 @@ def add_user_image(flower_id):
     if request.method == "POST":
         try:
             user = mongo.db.users.find_one({"email": session["user"]})
-            
+
             new_user_image = {
                 "user_id": user["_id"],
                 "flower_id": flower_id,
@@ -206,7 +231,7 @@ def register():
     if request.method == "POST":
         try:
             existing_user = mongo.db.users.find_one(
-            {"email": request.form.get("email").lower()})
+                {"email": request.form.get("email").lower()})
 
             if existing_user:
                 flash("Email already in use.")
@@ -214,7 +239,8 @@ def register():
 
             register = {
                 "email": request.form.get("email").lower(),
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash(
+                    request.form.get("password")),
                 "first_name": request.form.get("first_name").lower(),
                 "last_name": request.form.get("last_name").lower()
             }
@@ -241,10 +267,13 @@ def login():
                 {"email": request.form.get("email").lower()})
 
             if existing_user:
-                if check_password_hash(existing_user["password"], request.form.get("password")):
+                if check_password_hash(existing_user["password"],
+                                       request.form.get("password")):
                     session["user"] = existing_user["email"].lower()
-                    flash("Welcome, {}".format(existing_user["first_name"].capitalize()))
-                    return redirect(url_for("get_profile", email=existing_user["email"]))
+                    flash("Welcome, {}".format(
+                        existing_user["first_name"].capitalize()))
+                    return redirect(url_for("get_profile",
+                                            email=existing_user["email"]))
                 else:
                     flash("Incorrect Username and/or Password")
                     return redirect(url_for("login"))
@@ -277,8 +306,13 @@ def get_profile(email):
             {"email": email}
         )
         current_user = mongo.db.users.find_one({"email": session["user"]})
-        current_user_images = list(mongo.db.user_images.find({"user_id": current_user["_id"]}))
-        return render_template("profile.html", name=user["first_name"], user_images=current_user_images)
+        current_user_images = list(mongo.db.user_images.find(
+            {"user_id": current_user["_id"]}))
+        return render_template(
+            "profile.html",
+            name=user["first_name"],
+            user_images=current_user_images
+        )
     except:
         return render_template("404.html")
 
@@ -287,13 +321,15 @@ def get_profile(email):
 def edit_profile(email):
     try:
         user = mongo.db.users.find_one(
-        {"email": email}
+            {"email": email}
         )
         if request.method == "POST":
             try:
                 record_update = {
                     "email": request.form.get("email"),
-                    "password": generate_password_hash(request.form.get("password")),
+                    "password": generate_password_hash(
+                        request.form.get("password")
+                    ),
                     "first_name": request.form.get("first_name"),
                     "last_name": request.form.get("last_name")
                 }
@@ -306,7 +342,7 @@ def edit_profile(email):
                 return render_template("404.html")
 
         return render_template("edit_profile.html", user=user)
-        
+
     except:
         return render_template("404.html")
 
