@@ -1,5 +1,7 @@
 # CI-MS3-Floral-Reef
 
+<h2 align="center"><img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Floral%20Reef%20Mockup.PNG?raw=true" width="200" height="350"></h2>
+
 This is the repository for Floral Reef, the only Irish Community-Driven Flower Encyclopedia. It is designed to be a contemporary take on a typical encyclopedia/text-heavy website by presenting the information in a clean, minimal and spacious display.
 
 [View live project here.](https://ci-ms3-floral-reef.herokuapp.com/)
