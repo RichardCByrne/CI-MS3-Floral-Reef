@@ -240,8 +240,8 @@ A MongoDB index was created in order to allow the database to be queried through
 -   HTML W3C Validator [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-ms3-floral-reef.herokuapp.com%2F)
     -   The E3C HTML validator was used via 'Validate by URI' to validate the HTML.
     
--   ExtendsClass [Python Tester](https://extendsclass.com/python-tester.html)
-    -   The ExtendsClass Python Tester was used to check for syntax errors in the Python code. 
+-   [PEP8 Online](http://pep8online.com/checkresult)
+    -   The PEP8 Online Python Validator was used to check for syntax errors and PEP8 compliance in the Python code.
     
 ### Testing User Stories from User Experience (UX) Section
 
