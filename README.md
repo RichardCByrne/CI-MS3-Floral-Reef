@@ -295,7 +295,7 @@ A MongoDB index was created in order to allow the database to be queried through
         -   The profile page contains a button that allows the user to edit their profile details via a pre-populated form.
         
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Edit_Profile_Button.PNG?raw=true" alt="edit profile button">
-        
+        <br>
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/Edit_Profile.PNG?raw=true" alt="edit profile page">
         
     2.  As a Returning Visitor, I want to share my own photos to different flowers.
@@ -319,9 +319,9 @@ A MongoDB index was created in order to allow the database to be queried through
     <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/User_Image_Delete_Button.png?raw=true" alt="user image delete button">
         
     2.  As a frequent user, I want to see new content that has been added by users.
-    
-        -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
-        -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
+
+    -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
+    -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
     
 ### Further Testing
 
@@ -396,4 +396,4 @@ The project was deployed to Heroku using the following steps...
 
 ### Support
 
-Further information can be gotten by contacting the developer at richardbyrne1995@gmail.com
+-   Further information can be gotten by contacting the developer at richardbyrne1995@gmail.com
