@@ -1,25 +1,27 @@
 # CI-MS3-Floral-Reef
 
-This is the repository for Floral Reef, the only Irish Community-Driven Flower Encyclopedia. It is designed to be a contemporary take on a typical encyclopedia/text-heavy website by presenting the information in a clean, minimal and spacious display. 
+This is the repository for Floral Reef, the only Irish Community-Driven Flower Encyclopedia. It is designed to be a contemporary take on a typical encyclopedia/text-heavy website by presenting the information in a clean, minimal and spacious display.
+
+[View live project here.](https://ci-ms3-floral-reef.herokuapp.com/)
 
 ## User Experience (UX)
 
 -   User Stories
     
-    -   First Time Visitor Goals
+    1.  First Time Visitor Goals
     
         -   As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
         -   As a First Time Visitor, I want to see what flowers are currently available on the website.
         -   As a First Time Visitor, I want to find information about a particular flower.
         -   As a First Time Visitor, I want to see photos of a specific flower.
     
-    -   Returning Visitor Goals
+    2.  Returning Visitor Goals
         
         -   As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
         -   As a Returning Visitor, I want to share my own photos to different flowers.
         -   As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
     
-    -   Frequent Visitor Goals
+    3.  Frequent Visitor Goals
     
         -   As a frequent visitor, I want to be able to easily edit and delete the content that I contribute.
         -   As a frequent user, I want to see new content that has been added by users.
@@ -242,31 +244,31 @@ A MongoDB index was created in order to allow the database to be queried through
 
 - First Time Visitor Goals
 
-    -   As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
+    1.  As a First Time Visitor, I want to easily understand the main purpose of the site and easily navigate to where I want.
         
         -   Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath, there is a hero image with text and a "Get Inspired" call-to-action button that shows the user a random flower.
         -   The text within the hero image on the homepage clearly defines what the website is and isn't, in order to set users' expectations accordingly.
         -   The intended path for the user to go down is to click he 'Get Inspired' button to see how the primary data is laid out. From there, they can either create an account and start contributing or view more flowers via the navbar.
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation.
         
-    -   As a First Time Visitor, I want to see what flowers are currently available on the website.
+    2.  As a First Time Visitor, I want to see what flowers are currently available on the website.
 
         -   From the homepage, users can click on the 'Get Inspired' button to be taken to a random flower.
         -   Users can view all the flowers on the website by clicking on the 'Flowers' tab in the navbar.
         
-    -   As a First Time Visitor, I want to find information about a particular flower.
+    3.  As a First Time Visitor, I want to find information about a particular flower.
         
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation, allowing users to find a flower by name, latin name, irish name or by the date it was uploaded to the website.
         -   Each flower profile contains multiple information fields about the flower, including its flowering time, whether it's considered a wildflower, locations it can be found in, and occasions it is typically used for.
 
-    -   As a First Time Visitor, I want to see photos of a specific flower.
+    4.  As a First Time Visitor, I want to see photos of a specific flower.
     
         -   Each flower has a main image by which it can be identified. This is displayed both on the 'Flowers' page, and in each flower's profile page.
         -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
 
 -   Returning Visitor Goals
     
-    -   As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
+    1.  As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
         
         -   The navbar contains a 'Register' and 'Log In' buttons that displays whe no user is logged in.
         -   The 'Log In' page contains a link to the 'Register' page, in case the user hasn't created an account yet.
@@ -274,24 +276,24 @@ A MongoDB index was created in order to allow the database to be queried through
         -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
         -   The profile page contains a button that allows the user to edit their profile details via a pre-populated form.
 
-    -   As a Returning Visitor, I want to share my own photos to different flowers.
+    2.  As a Returning Visitor, I want to share my own photos to different flowers.
         
         -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
         -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
     
-    -   As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
+    3.  As a Returning Visitor, I want to contribute to the community by adding flowers not currently on the website.
     
         -   There is a dedicated 'Add Flower' button within the navbar, that allows logged-in users to add a flower to the website/database via a form.
     
 -   Frequent Visitor Goals
 
-    -   As a frequent visitor, I want to be able to easily edit and delete the content that I contribute to the site.
+    1.  As a frequent visitor, I want to be able to easily edit and delete the content that I contribute to the site.
     
         -   Flowers can be edited by the user who created the flower. This prevents any user from changing another user's contribution.
         -   Flowers can be deleted by the user who created it from the flower's profile page, using the 'Delete Flower' button.
         -   Each user-submitted image contains a delete button that only displays for the user who submitted the image, allowing them to delete the image at their behest.
         
-    -   As a frequent user, I want to see new content that has been added by users.
+    2.  As a frequent user, I want to see new content that has been added by users.
     
         -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
         -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
@@ -303,3 +305,69 @@ A MongoDB index was created in order to allow the database to be queried through
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
+## Deployment
+
+### Source Control Process
+
+This project was developed using Visual Studio Code, Phaser Game Engine, Git and GitHub using the following steps:
+
+1.  Logged into Github Desktop App
+2.  A new repository called 'CI-MS2-Mintendo-PLAYCHILD' was created locally for this project.
+3.  This repsoitory was initalised with a blank README.md file.
+4.  This repository was then published from Github Desktop to the remote Github server using 'Ctrl + P'.
+5.  The project folder was opened in Visual Studio Code where the initial files were created.
+6.  A new terminal in Visual Studio Code (Ctrl + Shift + ') was opened to begin the git commit process.
+7.  Files were added to the local git staging area using 'git add <'filename'>' and 'git add \*' where applicable.
+8.  Local commits were made using the 'git commit -m <'message'>' command.
+9.  These local commits were then periodically pushed to the remote Github server using the 'git push' command.
+10. A local server was run throughout the development process using the [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to test, in real time, changes made to the game and HTML page.
+
+### Heroku
+
+The project was deployed to Heroku using the following steps...
+
+1.  Create a file named 'Procfile' in the project directory and paste the following code: ```web: python app.py```
+2.  A requirements.txt file wsa created by using the command: ```pip3 freeze --local > requirements.txt```
+3.  Log into Heroku and crete a new Heroku app.
+4.  Name the app 'ci-ms3-floral-reef' and select local region.
+5.  Connect Heroku to GitHub by following the on-screen prompts.
+6.  Select the repository from which you want to deploy your code and click 'Connect'.
+7.  Enable automatic deploys from the master branch.
+8.  Go to the 'Settings' tab and reveal the 'Config Vars'.
+9.  Copy the following keys and values from your 'env.py' file that was used for development and paste them into your config vars: IP, MONGO_DBNAME, MONGO_URI, PORT and SECRET_KEY.
+10. The project will automatically be deployed by Heroku after a short time. A manual deployment can also be forced by clicking 'Deploy Branch' in the 'Deploy' tab.
+
+### Roadmap
+
+-   A system that displays the newest content at the top of the page, with a 'NEW' badge will be implemented.
+-   A more sophisticated security system will be integrated into all CRUD actions and user account systems.
+
+### Project Status
+
+-   This project's development has paused while the grading for this project is being completed. This status will change once the course has been completed.
+
+## Credits
+
+### Code
+
+-   [Code Institue - Full Stack Software Development Course](https://codeinstitute.net/): Coding skills learned in this course allowed the developer to create all the pages on this web-app.
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web): Referenced for best practices for lists and images, as well as the smooth scrolling functionality.
+
+### Content
+
+-   The descriptions and irish names for the flowers were gotten from [irishwildflowers.ie](https://www.irishwildflowers.ie/) and [Wikipedia](https://www.wikipedia.org/).
+-   All other content, unless states so, was written by the developer.
+
+### Media
+
+-   The Hero Image on the homepage comes from [Unsplash.](https://images.unsplash.com/photo-1511219096939-ce77f5f44cc8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80)
+-   The current images of the flowers, as of the time of writing, are all copyright compliant.
+
+### Acknowledgements
+
+-   My mentor, Spencer Bariball, for continuous helpful feedback and encouragement.
+-   Code Institute for giving me skills to create this project.
+
+### Support
+
+Further information can be gotten by contacting the developer at richardbyrne1995@gmail.com
