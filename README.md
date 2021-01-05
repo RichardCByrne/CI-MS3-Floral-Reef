@@ -81,6 +81,26 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
         -   [Tablet](https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/wireframes/T-User-Profile.png?raw=true)
         -   [Desktop](https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/wireframes/D-User-Profile.png?raw=true)
 
+-   Divergence from Wireframes
+
+    -   Homepage
+
+        -   The Homepage wireframe contains a search button in the center of the hero image, but after consulation with my mentor, it was moved to the navbar.
+        -   The tagline was changed from 'The Flower Experts' to 'The Only Community-Driven Irish Flower Encyclopedia'.
+
+    -   All Flowers
+
+        -   An 'All Flowers' title was added to the top of the page.
+
+    -   Flower Profile
+
+        -   The 'Colours' section was swapped out to host the 'Irish Name'.
+        -   The 'Occassions' section dynamically changes to 'Locations Found' based on whether or not the flower is marked as a wildflower.
+
+    -   Form Pages
+
+        -    A link to each other was added to the 'Register' and 'Log in' pages.
+
 ## Features
 
 -   Responsive on all device sizes
