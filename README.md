@@ -355,13 +355,56 @@ A MongoDB index was created in order to allow the database to be queried through
 
     -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
     -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
+
+### Functionality Tests
+
+-   All external links are functional and open in a new tab.
+-   All internal links are functional and provide user feedback where applicable.
+-   All forms function submit data correctly.
+-   All cookies work as expected.
+
+### Usability Tests
+
+-   All nav links bring you to the correct page.
+-   The mobile nav bar icon opens the navbar as expected.
+-   All images contain 'alt' text, via user the submitted description.
+
+### Interface Testing
+
+-   All queries retrieve data from the database and display correctly.
+-   Heroku processes and displays everything as expected.
+
+### Database Testing
+
+-   No database errors occur when using the queries built into this project.
+-   Data integrity is maintained while creating, updating or deleteing data in the database.
+
+### Compaitibility Testing
+
+-   This project functions as expected on Google Chrome, Internet Explorerm Microsoft Edge and Safari Browers. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari.
+
+### Performance Testing
+
+-   Lighthouse on Google Chrome Dev Tools gave the following scores:
+
+    -   Performance: 98
+    -   Accessibility: 92
+    -   Best Practices: 100
+    -   SEO: 100
+
+### Security Testing
+
+-   Unauthorised access to secure pages returns the user to 404.html.
+-   Incorrect login details returns an user-friendly error, and reloads the page.
+-   Database code injection by search bar is prevented against by using regular expressions and by using the .isalspha() method in Python.
+-   Website uses HTTPS.
     
 ### Further Testing
 
--   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+-   All HTML was auto-formatted using VSCode's built in formatter.
 
 ## Deployment
 
