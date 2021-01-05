@@ -16,7 +16,8 @@
                     <div class="flowers-container-left">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
+                                        alt="{{ flower.flower_name }}"></a>
                             </div>
                             <div class="col-md-6">
                                 <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
@@ -50,14 +51,16 @@
                                 <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
                             </div>
                             <div class="col-md-6 text-center">
-                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
+                                        alt="{{ flower.flower_name }}"></a>
                             </div>
                         </div>
                     </div>
                     <div class="flowers-container-left-mobile d-block">
                         <div class="row">
                             <div class="col-md-6 text-center">
-                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
+                                        alt="{{ flower.flower_name }}"></a>
                             </div>
                             <div class="col-md-6">
                                 <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
@@ -81,7 +84,8 @@
             <div class="col text-center m-4">
                 <h4>No results found.</h4>
                 <form action="{{ url_for('search') }}" method="post" class="text-center">
-                    <input type="search" name="query" id="query" minlength="3" class="btn info btn-lg m-2" placeholder="Search again" required>
+                    <input type="search" name="query" id="query" minlength="3" class="btn info btn-lg m-2"
+                        placeholder="Search again" required>
                 </form>
             </div>
         </section>
