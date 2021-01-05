@@ -201,7 +201,7 @@ The business's revenues are based around affiliate links placed on each non-wild
 4. Connection string was copied.
 5. A .gitignore and env.py file were created, and the env.py file was added to the .gitignore file to prevent any sensitive information being uploaded to GitHub.
 6. An os environment default variable called "MONGO_URI" was declared with a value of the Connection String.
-7. A 'mongo_project.py' file was created, and the following code was added:
+7. An 'app.py' file was created, and the following code was added:
 
    ```python
     # Imports relevant libraries
