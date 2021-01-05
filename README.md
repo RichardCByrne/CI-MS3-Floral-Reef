@@ -8,9 +8,9 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 
 ## Project Rationale
 
-The rationale for building this project is in regard to an identified gap in the market for a community website based around sharing images of specifically Irish flowers. There are websites that allow you share images of flowers, however, they rarely have a focus on flowers from a particular region. There are resources like [BioDiversity Ireland](https://records.biodiversityireland.ie/) that pit users against each other to record the nature around them, but none of them include the Irish names for the flowers. This is precisely where Floral Reef fits in. It's community-driven like [BioDiversity Ireland](https://records.biodiversityireland.ie/) but with added information and a cleaner, simpler layout. There are aesthetic elements that will continue to be refined over time, but it's current state has gotten positive feedback from testers.
+The rationale for building this project is in regard to an identified gap in the market for a community website based around sharing images of specifically Irish flowers. There are websites that allow you share images of flowers, however, they rarely have a focus on flowers from a particular region. There are resources like [BioDiversity Ireland](https://records.biodiversityireland.ie/), but none include the Irish names for the flowers. This is precisely where Floral Reef fits in. It's community-driven like [BioDiversity Ireland](https://records.biodiversityireland.ie/) but with added information and a cleaner, simpler layout. There are aesthetic elements that will continue to be refined over time, but it's current state has gotten positive feedback from testers.
 
-The business's revenues are based around affiliate links placed on each non-wildflower profile page. In a production website, they would be manually filled in by an admin.
+The business's revenues are based around affiliate links placed on each non-wildflower profile page. In a production website, they would be manually filled in by an admin, but in it's current state, Floral Reef displays two Irish flower shops by default.
 
 ## User Experience (UX)
 
