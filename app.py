@@ -199,7 +199,7 @@ def edit_flower(flower_id):
 def delete_flower(flower_id):
     try:
         mongo.db.flowers.remove({"_id": ObjectId(flower_id)})
-        flash("Flower succesfully deleted")
+        flash("Flower successfully deleted")
         return redirect(url_for("get_all_flowers"))
     except:
         return render_template("404.html")
@@ -219,7 +219,7 @@ def add_user_image(flower_id):
                 "description": request.form.get("description")
             }
             mongo.db.user_images.insert_one(new_user_image)
-            flash("Your image has been successfuly added!")
+            flash("Your image has been successfully added!")
             return redirect(url_for("flower", flower_id=flower_id))
         except:
             return render_template("404.html")

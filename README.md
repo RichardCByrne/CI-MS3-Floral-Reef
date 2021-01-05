@@ -10,7 +10,7 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 
 The rationale for building this project is in regard to an identified gap in the market for a community website based around sharing images of specifically Irish flowers. There are websites that allow you share images of flowers, however, they rarely have a focus on flowers from a particular region. There are resources like [BioDiversity Ireland](https://records.biodiversityireland.ie/) that pit users against each other to record the nature around them, but none of them include the Irish names for the flowers. This is precisely where Floral Reef fits in. It's community-driven like [BioDiversity Ireland](https://records.biodiversityireland.ie/) but with added information and a cleaner, simpler layout. There are aesthetic elements that will continue to be refined over time, but it's current state has gotten positive feedback from testers.
 
-The business's revenues are based around affilliate links placed on each non-wildflower profile page. In a production website, they would be manually filled in by an admin.
+The business's revenues are based around affiliate links placed on each non-wildflower profile page. In a production website, they would be manually filled in by an admin.
 
 ## User Experience (UX)
 
@@ -91,7 +91,7 @@ The business's revenues are based around affilliate links placed on each non-wil
 
     -   Homepage
 
-        -   The Homepage wireframe contains a search button in the center of the hero image, but after consulation with my mentor, it was moved to the navbar.
+        -   The Homepage wireframe contains a search button in the center of the hero image, but after consultation with my mentor, it was moved to the navbar.
         -   The tagline was changed from 'The Flower Experts' to 'The Only Community-Driven Irish Flower Encyclopedia'.
 
     -   All Flowers
@@ -101,8 +101,8 @@ The business's revenues are based around affilliate links placed on each non-wil
     -   Flower Profile
 
         -   The 'Colours' section was swapped out to host the 'Irish Name'.
-        -   The 'Occassions' section dynamically changes to 'Locations Found' based on whether or not the flower is marked as a wildflower.
-        -   Comments were ommited from this build in favour of sharing images, as the website is already text heavy.
+        -   The 'Occasions' section dynamically changes to 'Locations Found' based on whether or not the flower is marked as a wildflower.
+        -   Comments were omitted from this build in favour of sharing images, as the website is already text heavy.
 
     -   Form Pages
 
@@ -160,7 +160,7 @@ The business's revenues are based around affilliate links placed on each non-wil
     -   The Python OS module was used during the development process to create the following environment variables: 'IP', 'PORT', 'Secret Key', 'MONGO_URI', and 'MONGO_DBNAME'.
     
 11. [Python.Random](https://docs.python.org/3/library/random.html)
-    -   The Python Random module was used for an initial cersion of the 'Get Inspired' button which finds and return and random flower from the database. This was later replaced by the MONGODB query, "{$sample: {size: 1}}".
+    -   The Python Random module was used for an initial version of the 'Get Inspired' button which finds and return and random flower from the database. This was later replaced by the MONGODB query, "{$sample: {size: 1}}".
     
 12. [BSON.ObjectId](https://docs.mongodb.com/manual/reference/method/ObjectId/)
     -   The ObjectId method was imported from BSON in order to verify MONGODB's object ids for multiple Flask functions.
@@ -248,7 +248,7 @@ The business's revenues are based around affilliate links placed on each non-wil
 5. The user_images records wer given the following fields: 'flower_id', 'image_source' and 'description'.
 6. The users records were given the following fields: 'email', 'password', 'first_name', and 'last_name'.
 
-### Creating a MongoDb Index
+### Creating a MongoDB Index
 
 A MongoDB index was created in order to allow the database to be queried through user search.
 
@@ -394,11 +394,11 @@ A MongoDB index was created in order to allow the database to be queried through
 ### Database Testing
 
 -   No database errors occur when using the queries built into this project.
--   Data integrity is maintained while creating, updating or deleteing data in the database.
+-   Data integrity is maintained while creating, updating or deleting data in the database.
 
 ### Compaitibility Testing
 
--   This project functions as expected on Google Chrome, Internet Explorerm Microsoft Edge and Safari Browers. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari.
+-   This project functions as expected on Google Chrome, Internet Explorer Microsoft Edge and Safari Browsers. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari.
 
 ### Performance Testing
 
@@ -411,7 +411,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 ### Responsiveness Testing
 
--   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Picel 3a XL, iPhone 6s, iPhone7, iPhone 8 & iPhoneX.
+-   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Pixel 3a XL, iPhone 6s, iPhone7, iPhone 8 & iPhoneX.
 -   The website is responsive on all device sizes.
 
 ### Security Testing
@@ -422,7 +422,7 @@ A MongoDB index was created in order to allow the database to be queried through
 -   Website uses HTTPS.
 -   Users can only edit flowers that they themselves have created.
 -   Users can change their password without verification. This is addressed in the roadmap.
--   All data, including user-submitted content is editible via the MongoDB database.
+-   All data, including user-submitted content is editable via the MongoDB database.
     
 ### Further Testing
 
@@ -438,8 +438,8 @@ A MongoDB index was created in order to allow the database to be queried through
 This project was developed using Visual Studio Code, Phaser Game Engine, Git and GitHub using the following steps:
 
 1.  Logged into Github Desktop App
-2.  A new repository called 'CI-MS2-Mintendo-PLAYCHILD' was created locally for this project.
-3.  This repsoitory was initalised with a blank README.md file.
+2.  A new repository called 'CI-MS3-Floral-Reef' was created locally for this project.
+3.  This repository was initalised with a blank README.md file.
 4.  This repository was then published from Github Desktop to the remote Github server using 'Ctrl + P'.
 5.  The project folder was opened in Visual Studio Code where the initial files were created.
 6.  A new terminal in Visual Studio Code (Ctrl + Shift + ') was opened to begin the git commit process.
@@ -478,14 +478,14 @@ The project was deployed to Heroku using the following steps...
 
 ### Code
 
--   [Code Institue - Full Stack Software Development Course](https://codeinstitute.net/): Coding skills learned in this course allowed the developer to create all the pages on this web-app.
+-   [Code Institute - Full Stack Software Development Course](https://codeinstitute.net/): Coding skills learned in this course allowed the developer to create all the pages on this web-app.
 -   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web): Referenced for best practices for lists and images, as well as the smooth scrolling functionality.
 
 ### Content
 
 -   The descriptions and irish names for the flowers were gotten from [irishwildflowers.ie](https://www.irishwildflowers.ie/) and [Wikipedia](https://www.wikipedia.org/).
 -   All other content, unless states so, was written by the developer.
--   The develper is not responsible for the copyright of the images added by users.
+-   The developer is not responsible for the copyright of the images added by users.
 
 ### Media
 
