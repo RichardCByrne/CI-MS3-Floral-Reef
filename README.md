@@ -6,6 +6,12 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 
 [View live project here.](https://ci-ms3-floral-reef.herokuapp.com/)
 
+## Project Rationale
+
+The rationale for building this project is in regard to an identified gap in the market for a community website based around sharing images of specifically Irish flowers. There are websites that allow you share images of flowers, however, they rarely have a focus on flowers from a particular region. There are resources like [BioDiversity Ireland](https://records.biodiversityireland.ie/) that pit users against each other to record the nature around them, but none of them include the Irish names for the flowers. This is precisely where Floral Reef fits in. It's community-driven like [BioDiversity Ireland](https://records.biodiversityireland.ie/) but with added information and a cleaner, simpler layout. There are aesthetic elements that will continue to be refined over time, but it's current state has gotten positive feedback from testers.
+
+The business's revenues are based around affilliate links placed on each non-wildflower profile page. In a production website, they would be manually filled in by an admin.
+
 ## User Experience (UX)
 
 -   User Stories
@@ -96,6 +102,7 @@ This is the repository for Floral Reef, the only Irish Community-Driven Flower E
 
         -   The 'Colours' section was swapped out to host the 'Irish Name'.
         -   The 'Occassions' section dynamically changes to 'Locations Found' based on whether or not the flower is marked as a wildflower.
+        -   Comments were ommited from this build in favour of sharing images, as the website is already text heavy.
 
     -   Form Pages
 
@@ -356,23 +363,33 @@ A MongoDB index was created in order to allow the database to be queried through
     -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
     -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
 
-### Functionality Tests
+### Functionality Testing
 
 -   All external links are functional and open in a new tab.
 -   All internal links are functional and provide user feedback where applicable.
 -   All forms function submit data correctly.
 -   All cookies work as expected.
 
-### Usability Tests
+### Accessibility Testing
+
+-   Semantic markup is used to convey the document structure.
+-   Information is presented and categorised in terms of its priority.
+-   All images contain 'alt' text, via user the submitted description. Aria labels are used when the 'img' 'alt' attribute is not available.
+
+### Usability Testing
 
 -   All nav links bring you to the correct page.
 -   The mobile nav bar icon opens the navbar as expected.
--   All images contain 'alt' text, via user the submitted description.
+-   User Navigation is unambiguous.
+-   While the 'Distinction' criteria state that 'users who direct to a non-existent page or resource are redirected back to the main page', it was deemed more appropriate to either display an error message on the same page if submitting a form, or redirecting the to '404.html' which contains a link to the homepage. This way the user is given explicit direction and understands that something went wrong.
+-   Already stored information is not asked for by a logged in user.
+-   Messages are displayed at the tp of the website indicating user progress and feedback where appropriate.
 
 ### Interface Testing
 
 -   All queries retrieve data from the database and display correctly.
 -   Heroku processes and displays everything as expected.
+-   All pages are aesthetically consistent.
 
 ### Database Testing
 
@@ -392,16 +409,24 @@ A MongoDB index was created in order to allow the database to be queried through
     -   Best Practices: 100
     -   SEO: 100
 
+### Responsiveness Testing
+
+-   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Picel 3a XL, iPhone 6s, iPhone7, iPhone 8 & iPhoneX.
+-   The website is responsive on all device sizes.
+
 ### Security Testing
 
 -   Unauthorised access to secure pages returns the user to 404.html.
 -   Incorrect login details returns an user-friendly error, and reloads the page.
 -   Database code injection by search bar is prevented against by using regular expressions and by using the .isalspha() method in Python.
 -   Website uses HTTPS.
+-   Users can only edit flowers that they themselves have created.
+-   Users can change their password without verification. This is addressed in the roadmap.
+-   All data, including user-submitted content is editible via the MongoDB database.
     
 ### Further Testing
 
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   Try/except syntax is used to redirect the user to 404.html if anything goes wrong.
 -   A large amount of testing was done to ensure that all pages were linking correctly.
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 -   All HTML was auto-formatted using VSCode's built in formatter.
@@ -442,6 +467,8 @@ The project was deployed to Heroku using the following steps...
 
 -   A system that displays the newest content at the top of the page, with a 'NEW' badge will be implemented.
 -   A more sophisticated security system will be integrated into all CRUD actions and user account systems.
+-   A comment section will be implemented into each of the flower profiles.
+-   A map feature will be implemented, so that users can pinpoint exactly where their photos were taken.
 
 ### Project Status
 
@@ -458,6 +485,7 @@ The project was deployed to Heroku using the following steps...
 
 -   The descriptions and irish names for the flowers were gotten from [irishwildflowers.ie](https://www.irishwildflowers.ie/) and [Wikipedia](https://www.wikipedia.org/).
 -   All other content, unless states so, was written by the developer.
+-   The develper is not responsible for the copyright of the images added by users.
 
 ### Media
 
