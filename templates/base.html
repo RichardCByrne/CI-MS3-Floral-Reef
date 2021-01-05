@@ -28,11 +28,10 @@
             <div class="container-fluid">
                 <!-- Navbar brand -->
                 <a class="navbar-brand" href="{{ url_for('home') }}">Floral Reef</a>
-        
+
                 <!-- Toggle button -->
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                    data-target="#navbar" aria-controls="navbar"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
 
@@ -66,7 +65,8 @@
                         {% endif %}
                     </ul>
                     <form action="{{ url_for('search') }}" method="post" class="text-center">
-                        <input type="search" name="query" id="query" minlength="3" class="search-input" aria-label="search" pattern="^[a-zA-Z0-9]{1,20}$" required>
+                        <input type="search" name="query" id="query" minlength="3" class="search-input" aria-label="search"
+                            pattern="^[a-zA-Z0-9]{1,20}$" required>
                         <button class="search-btn fas fa-search"></button>
                     </form>
                     <!-- Links -->
@@ -78,17 +78,17 @@
 
         <section>
             {% with messages = get_flashed_messages() %}
-              {% if messages %}
-                {% for message in messages %}
-                  <div class="row flashes text-center justify-content-center">
-                    <h4 class="">
-                      {{ message }}
-                    </h4>
-                  </div>
-                {% endfor %}
-              {% endif %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="row flashes text-center justify-content-center">
+                            <h4>
+                                {{ message }}
+                            </h4>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             {% endwith %}
-          </section>
+        </section>
 
         {% block header %}
         {% endblock %}
@@ -104,14 +104,12 @@
     <!-- Custom JS -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </body>
 
 </html>

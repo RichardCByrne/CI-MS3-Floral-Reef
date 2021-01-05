@@ -10,7 +10,7 @@
 
     <h1 class="text-center register">Edit Profile</h1>
     <h5 class="text-center mb-5">Change your details</h5>
-
+    
     <section class="row">
         <div class="col-1 col-md-3"></div>
         <div class="col-10 col-md-6">
@@ -20,7 +20,8 @@
                     <!-- First Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="first_name" name="first_name" class="form-control" value="{{ user.first_name|title }}"/>
+                            <input type="text" id="first_name" name="first_name" class="form-control"
+                                value="{{ user.first_name|title }}" />
                             <label class="form-label" for="first_name" minlength="2" maxlength="25">First Name</label>
                         </div>
                     </div>
@@ -28,7 +29,7 @@
                     <div class="col">
                         <div class="form-outline">
                             <input type="text" id="last_name" name="last_name" class="form-control" minlength="2"
-                                maxlength="25" value="{{ user.last_name|title }}"/>
+                                maxlength="25" value="{{ user.last_name|title }}" />
                             <label class="form-label" for="last_name">Last Name</label>
                         </div>
                     </div>
@@ -36,7 +37,8 @@
     
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="email" id="email" name="email" minlength="5" maxlength="35" class="form-control" value="{{ user.email }}"/>
+                    <input type="email" id="email" name="email" minlength="5" maxlength="35" class="form-control"
+                        value="{{ user.email }}" />
                     <label class="form-label" for="email">Email Address</label>
                 </div>
     

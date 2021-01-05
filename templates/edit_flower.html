@@ -19,21 +19,23 @@
                     <!-- Flower Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="flower_name" name="flower_name" class="form-control" placeholder="e.g. Agrimony"
-                                value="{{ flower.flower_name|title }}" minlength="3" maxlength="30" required />
+                            <input type="text" id="flower_name" name="flower_name" class="form-control"
+                                placeholder="e.g. Agrimony" value="{{ flower.flower_name|title }}" minlength="3"
+                                maxlength="30" required />
                             <label class="form-label" for="flower_name">Flower Name</label>
                         </div>
                     </div>
                     <!-- Irish Name -->
                     <div class="col">
                         <div class="form-outline">
-                            <input type="text" id="irish_name" name="irish_name" class="form-control" placeholder="e.g. Marbhdhraighean"
-                                value="{{ flower.irish_name|title }}" minlength="3" maxlength="30" />
+                            <input type="text" id="irish_name" name="irish_name" class="form-control"
+                                placeholder="e.g. Marbhdhraighean" value="{{ flower.irish_name|title }}" minlength="3"
+                                maxlength="30" />
                             <label class="form-label" for="irish_name">Irish Name</label>
                         </div>
                     </div>
                 </div>
-                
+    
                 <div class="row mb-4">
                     <!-- Latin Name -->
                     <div class="col">
@@ -58,15 +60,16 @@
                 <!-- Flowering Time -->
                 <div class="form-outline mb-4">
                     <input type="text" id="flowering_time" name="flowering_time" class="form-control"
-                        placeholder="e.g. June-September" value="{{ flower.flowering_time|title }}" minlength="6" maxlength="22" required />
+                        placeholder="e.g. June-September" value="{{ flower.flowering_time|title }}" minlength="6"
+                        maxlength="22" required />
                     <label class="form-label" for="flowering_time">Flowering Time</label>
                 </div>
     
                 <!-- Description -->
                 <div class="form-outline mb-4">
                     <textarea type="text" id="description" name="description" class="form-control"
-                        placeholder="e.g. Tall spikes of small yellow flowers..." minlength="20" maxlength="250"
-                        required>{{ flower.description }}</textarea>
+                        placeholder="e.g. Tall spikes of small yellow flowers..." minlength="20" maxlength="250" required>{{
+                        flower.description }}</textarea>
                     <label class="form-label" for="description">Flower Description</label>
                 </div>
     
@@ -74,7 +77,7 @@
                 <div class="form-outline mb-4 text-left">
                     {% if flower.is_wildflower == "on" %}
                         <label class="form-label" for="is_wildflower">Is this flower a wildflower?</label>
-                        <input type="checkbox" id="is_wildflower" name="is_wildflower" class="form-control checkbox" checked/>
+                        <input type="checkbox" id="is_wildflower" name="is_wildflower" class="form-control checkbox" checked />
                     {% else %}
                         <label class="form-label" for="is_wildflower">Is this flower a wildflower?</label>
                         <input type="checkbox" id="is_wildflower" name="is_wildflower" class="form-control checkbox" checked/>
@@ -89,12 +92,12 @@
                             value="{{ flower.location }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="location">Where can it be found?</label>
                     </div>
-
+                    
                     <!-- Occasions -->
                     <div class="form-outline mb-4 occasions d-none">
                         <input type="text" id="occasions" name="occasions" class="form-control"
-                            placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..."
-                            value="{{ flower.occasions }}" minlength="10" maxlength="100" />
+                            placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..." value="{{ flower.occasions }}"
+                            minlength="10" maxlength="100" />
                         <label class="form-label" for="occasions">What occassion(s) is it used for?</label>
                     </div>
                 {% else %}
@@ -105,23 +108,23 @@
                             value="{{ flower.location }}" minlength="10" maxlength="100" />
                         <label class="form-label" for="location">Where can it be found?</label>
                     </div>
-
+                    
                     <!-- Occasions -->
                     <div class="form-outline mb-4 occasions d-block">
                         <input type="text" id="occasions" name="occasions" class="form-control"
-                            placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..."
-                            value="{{ flower.occasions }}" minlength="10" maxlength="100" />
+                            placeholder="e.g. Romance, Weddings, Birthdays, Get Well, With Sympathies etc..." value="{{ flower.occasions }}"
+                            minlength="10" maxlength="100" />
                         <label class="form-label" for="occasions">What occassion(s) is it used for?</label>
                     </div>
                 {% endif %}
     
                 <!-- Image Url -->
                 <div class="form-outline mb-4">
-                    <input type="url" id="image_url" name="image_url" class="form-control" value="{{ flower.image_url }}" placeholder="https://..."
-                        required />
+                    <input type="url" id="image_url" name="image_url" class="form-control" value="{{ flower.image_url }}"
+                        placeholder="https://..." required />
                     <label class="form-label" for="image_url">Image URL</label>
                 </div>
-    
+                
                 <!-- Buttons -->
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn mb-4 form-submit-btn">Edit Flower</button>
