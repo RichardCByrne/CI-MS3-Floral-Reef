@@ -1,4 +1,5 @@
 /* --------------------------------General */
+
 * {
     scroll-behavior: smooth;
     transition: all .5s;
@@ -21,14 +22,9 @@ body {
     margin-left: 0;
 }
 
-
 /* --------------------------------Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Bellefair', serif;
 }
 
@@ -72,8 +68,8 @@ strong {
     font-weight: 900;
 }
 
-
 /* --------------------------------Components */
+
 .btn.btn-lg {
     font-size: 1rem;
     border-radius: .6rem;
@@ -143,8 +139,8 @@ strong {
     font-size: 1.2rem;
 }
 
-
 /* --------------------------------Nav */
+
 .navbar {
     position: absolute;
     top: 0;
@@ -178,8 +174,8 @@ nav a:hover {
     color: #C9AD5D;
 }
 
-
 /* --------------------------------Index.html */
+
 .bg-image {
     width: 100%;
     position: absolute;
@@ -222,8 +218,8 @@ h4.lead {
     color: white;
 }
 
-
 /* --------------------------------All_Flowers.html */
+
 #all-flowers {
     font-size: 2.5rem;
     border-bottom: #C9AD5D 2px solid;
@@ -272,12 +268,12 @@ a.see-more {
 .info {
     border: 1px solid #3a8573;
     color: #3a8573
-  }
+}
 
 .info::placeholder {
     color: #3a8573;
 }
-  
+
 .info:hover {
     background: #3a8573;
     color: white;
@@ -288,6 +284,7 @@ a.see-more {
 }
 
 /* --------------------------------Flower.html */
+
 .flower-container {
     margin: 5rem .3rem 1rem .3rem;
 }
@@ -336,8 +333,7 @@ a.see-more {
     left: 0;
     width: 100%;
     height: 100%;
-    background:rgba(0, 0, 0, 0);
-    transition: background .5s ease;
+    background: rgba(0, 0, 0, 0);
 }
 
 .user-image-container:hover .overlay {
@@ -386,6 +382,7 @@ a.see-more {
 }
 
 /* --------------------------------Edit_Flower.html */
+
 .form-control:focus {
     color: #495057;
     background-color: #fff;
@@ -395,6 +392,7 @@ a.see-more {
 }
 
 /* --------------------------------Register.html */
+
 .register {
     margin-top: 5rem;
     margin-bottom: 2.5rem;
@@ -409,11 +407,13 @@ form label {
 }
 
 /* --------------------------------Profile.html */
+
 .profile {
     margin-top: 6rem;
 }
 
 /* --------------------------------Add_Flower.html */
+
 .checkbox {
     display: inline-block;
     width: 5%;
@@ -428,73 +428,62 @@ form label {
 }
 
 /* --------------------------------404.html */
+
 .error-container {
     margin: 5rem;
 }
 
-
 /* ------------------------------------------------------Media Queries */
-/* --------------------------------Min Width 576px */
-@media screen and (min-width: 576px) {
 
-}
+/* --------------------------------Min Width 576px */
+
+@media screen and (min-width: 576px) {}
 
 /* --------------------------------Min Width 768px */
+
 @media screen and (min-width: 768px) {
     /* General */
     h1 {
         font-size: 6rem;
     }
-    
     h2 {
         font-size: 5rem;
     }
-    
     h3 {
         font-size: 4rem;
     }
-    
     h4 {
         font-size: 3rem;
     }
-    
     h5, .lead {
         font-size: 2rem;
     }
-    
     h6 {
         font-size: 1.7rem;
     }
-    
     p {
         font-size: 1.4rem;
     }
-
     /* All_Flowers.html */
     #all-flowers {
         font-size: 3.5rem;
         border-bottom: #C9AD5D 2px solid;
     }
-
     /* Flower.html */
     .flower-container {
-        margin:5rem 1rem 1rem 1rem;
+        margin: 5rem 1rem 1rem 1rem;
     }
-
     .flower-affiliate-link:last-of-type {
         margin-bottom: 0;
     }
-
     .flower-info h4 {
         margin-top: 2rem;
     }
-
     .your-image {
         top: 9.5%;
         left: 5%;
         font-size: 1rem;
     }
-
     .user-image-container {
         position: relative;
         display: inline-block;
@@ -502,7 +491,6 @@ form label {
         height: 25rem;
         margin: 0 1rem 1rem 0;
     }
-
     .user-image-container img {
         position: absolute;
         width: 100%;
@@ -511,7 +499,6 @@ form label {
         object-fit: cover;
         overflow: hidden;
     }
-
     .flower-container img {
         width: 100%;
         max-height: 25rem;
@@ -521,6 +508,7 @@ form label {
 }
 
 /* --------------------------------Min Width 1200px */
+
 @media screen and (min-width: 1200px) {
     /* Flower.html */
     .your-image {

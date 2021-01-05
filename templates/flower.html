@@ -15,6 +15,7 @@
                 <div class="col-md-6 text-center">
                     <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
                 </div>
+                <!-- ./Image -->
                 <!-- Overview -->
                 <div class="col-md-6">
                     <h3>{{ flower.flower_name|title }}
@@ -44,6 +45,7 @@
                         {% endif %}
                     {% endif %}
                 </div>
+                <!-- ./Overview -->
             </section>
             <!-- Flower Info -->
             <section class="flower-info">
@@ -81,13 +83,16 @@
                     </div>
                 </div>
             </section>
+            <!-- ./Flower Info -->
             <br>
             <!-- User Images -->
+            <!-- Checks if there any user images for the current flower -->
             {% if user_images %}
                 <section>
                     <div class="row">
                         <div class="col-md-6">
                             <h4>User Images
+                                <!-- Checks if there is currently a user logged in -->
                                 {% if session.user %}
                                     <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your
                                             Image!</a></p>
@@ -118,6 +123,7 @@
                         </div>
                     </div>
                 </section>
+            <!-- In no user images exist for the current flower -->
             {% else %}
             <section class="row">
                 <div class="col-md-6">
@@ -133,6 +139,7 @@
                 </div>
             </section>
             {% endif %}
+            <!-- ./User Images -->
         </div>
     </div>
 

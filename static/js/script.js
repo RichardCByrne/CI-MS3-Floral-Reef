@@ -1,7 +1,7 @@
-$(document).ready(function(){
+$(document).ready(function () {
     // Add Flower Form
-    $("input[id='is_wildflower']").click(function() {
-        if($(this).is(":checked")){
+    $("input[id='is_wildflower']").click(function () {
+        if ($(this).is(":checked")) {
             $(".location").addClass("d-block");
             $(".location").removeClass("d-none");
             $(".occasions").addClass("d-none");
@@ -15,7 +15,7 @@ $(document).ready(function(){
     });
 
     // All_Flowers 
-    if(screen.width < 768) {
+    if (screen.width < 768) {
         $(".flowers-container-right").removeClass("d-block");
         $(".flowers-container-right").addClass("d-none");
         $(".flowers-container-left-mobile").removeClass("d-none");

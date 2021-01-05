@@ -74,13 +74,14 @@
                             pattern="^[a-zA-Z0-9]{1,20}$" required>
                         <button class="search-btn fas fa-search"></button>
                     </form>
-                    <!-- Links -->
+                    <!-- ./Links -->
                 </div>
-                <!-- Collapsible wrapper -->
+                <!-- ./Collapsible wrapper -->
             </div>
-            <!-- Container wrapper -->
+            <!-- ./Container wrapper -->
         </nav>
 
+        <!-- Flashed messages -->
         <section>
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
@@ -94,6 +95,7 @@
                 {% endif %}
             {% endwith %}
         </section>
+        <!-- ./Flashed messages -->
 
         {% block header %}
         {% endblock %}

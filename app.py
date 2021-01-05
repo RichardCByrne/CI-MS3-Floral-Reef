@@ -8,8 +8,10 @@ if os.path.exists("env.py"):
     import env
 
 
+# Setting up instance of Flask
 app = Flask(__name__)
 
+# Applying all relevant vonfig vars
 app.config["MONGO_DMNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -17,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Homepage
 @app.route("/")
 @app.route("/home")
 def home():
@@ -26,6 +29,7 @@ def home():
         return render_template("404.html")
 
 
+# Search
 @app.route("/search", methods=["GET", "POST"])
 def search():
     try:
@@ -40,6 +44,7 @@ def search():
         return render_template("404.html")
 
 
+# Get Inspired
 @app.route("/get_inspired")
 def get_inspired():
     try:
@@ -56,17 +61,18 @@ def get_inspired():
             current_user_images = list(mongo.db.user_images.find(
                 {"user_id": current_user["email"]}))
             return render_template("flower.html",
-                                flower=random_flower,
-                                user_images=user_images,
-                                current_user_images=current_user_images)
+                                   flower=random_flower,
+                                   user_images=user_images,
+                                   current_user_images=current_user_images)
         else:
             return render_template("flower.html",
-                                flower=random_flower,
-                                user_images=user_images)
+                                   flower=random_flower,
+                                   user_images=user_images)
     except:
         return render_template("404.html")
 
 
+# All Flowers
 @app.route("/all_flowers")
 def get_all_flowers():
     try:
@@ -76,6 +82,7 @@ def get_all_flowers():
         return render_template("404.html")
 
 
+# Flower Profile
 @app.route("/flower/<flower_id>")
 def flower(flower_id):
     try:
@@ -102,6 +109,7 @@ def flower(flower_id):
         return render_template("404.html")
 
 
+# Add Flower
 @app.route("/add_flower", methods=["GET", "POST"])
 def add_flower():
     if request.method == "POST":
@@ -141,12 +149,14 @@ def add_flower():
         return render_template("404.html")
 
 
+# Edit Flower
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
     if request.method == "POST":
         try:
             current_user = mongo.db.users.find_one({"email": session["user"]})
-            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+            is_wildflower = "on" if request.form.get(
+                "is_wildflower") else "off"
             new_flower = {
                 "flower_name": request.form.get("flower_name"),
                 "latin_name": request.form.get("latin_name"),
@@ -184,6 +194,7 @@ def edit_flower(flower_id):
         return render_template("404.html")
 
 
+# Delete Flower
 @app.route("/delete_flower/<flower_id>")
 def delete_flower(flower_id):
     try:
@@ -194,6 +205,7 @@ def delete_flower(flower_id):
         return render_template("404.html")
 
 
+# Add User Image
 @app.route("/add_user_image/<flower_id>", methods=["GET", "POST"])
 def add_user_image(flower_id):
     if request.method == "POST":
@@ -218,6 +230,7 @@ def add_user_image(flower_id):
         return render_template("404.html")
 
 
+# Delete User Image
 @app.route("/delete_user_image/<image_id>")
 def delete_user_image(image_id):
     try:
@@ -228,6 +241,7 @@ def delete_user_image(image_id):
         return render_template("404.html")
 
 
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -261,6 +275,7 @@ def register():
         return render_template("404.html")
 
 
+# Login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -291,6 +306,7 @@ def login():
         return render_template("404.html")
 
 
+# Logout
 @app.route("/logout")
 def logout():
     try:
@@ -301,6 +317,7 @@ def logout():
         return render_template("404.html")
 
 
+# User Profile
 @app.route("/profile/<email>")
 def get_profile(email):
     try:
@@ -319,6 +336,7 @@ def get_profile(email):
         return render_template("404.html")
 
 
+# Edit Profile
 @app.route("/edit_profile/<email>", methods=["GET", "POST"])
 def edit_profile(email):
     try:
@@ -349,6 +367,7 @@ def edit_profile(email):
         return render_template("404.html")
 
 
+# Error 404
 @app.route("/404")
 def error404():
     return render_template("404.html")
