@@ -1,5 +1,4 @@
 import os
-from random import sample, randint
 from flask import (Flask, flash, render_template,
                    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
@@ -51,19 +50,19 @@ def get_inspired():
             for flower in cursor:
                 random_flower = flower
         user_images = list(mongo.db.user_images.find(
-            {"flower_id": ObjectId(random_flower["_id"])}))
+            {"flower_id": str(random_flower["_id"])}))
         if session:
             current_user = mongo.db.users.find_one({"email": session["user"]})
             current_user_images = list(mongo.db.user_images.find(
                 {"user_id": current_user["email"]}))
             return render_template("flower.html",
-                                   flower=random_flower,
-                                   user_images=user_images,
-                                   current_user_images=current_user_images)
+                                flower=random_flower,
+                                user_images=user_images,
+                                current_user_images=current_user_images)
         else:
             return render_template("flower.html",
-                                   flower=random_flower,
-                                   user_images=user_images)
+                                flower=random_flower,
+                                user_images=user_images)
     except:
         return render_template("404.html")
 
@@ -89,7 +88,6 @@ def flower(flower_id):
             current_user_created_flower = True if ObjectId(
                 current_user["_id"]) == ObjectId(
                     flower["created_by"]) else False
-            print(current_user_created_flower)
             return render_template(
                 "flower.html", flower=flower,
                 user_images=user_images,
@@ -146,35 +144,39 @@ def add_flower():
 @app.route("/edit_flower/<flower_id>", methods=["GET", "POST"])
 def edit_flower(flower_id):
     if request.method == "POST":
-        current_user = mongo.db.users.find_one({"email": session["user"]})
-        is_wildflower = "on" if request.form.get("is_wildflower") else "off"
-        new_flower = {
-            "flower_name": request.form.get("flower_name"),
-            "latin_name": request.form.get("latin_name"),
-            "irish_name": request.form.get("irish_name"),
-            "family": request.form.get("family"),
-            "created_by": ObjectId(current_user["_id"]),
-            "is_wildflower": is_wildflower,
-            "flowering_time": request.form.get("flowering_time"),
-            "image_url": request.form.get("image_url"),
-            "description": request.form.get("description"),
-            "location": request.form.get("location"),
-            "occasions": request.form.get("occasions"),
-            "affiliate_1": "https://howbertandmays.ie/",
-            "affiliate_2": "https://www.knocknacarraflorists.ie/"
-        }
+        try:
+            current_user = mongo.db.users.find_one({"email": session["user"]})
+            is_wildflower = "on" if request.form.get("is_wildflower") else "off"
+            new_flower = {
+                "flower_name": request.form.get("flower_name"),
+                "latin_name": request.form.get("latin_name"),
+                "irish_name": request.form.get("irish_name"),
+                "family": request.form.get("family"),
+                "created_by": ObjectId(current_user["_id"]),
+                "is_wildflower": is_wildflower,
+                "flowering_time": request.form.get("flowering_time"),
+                "image_url": request.form.get("image_url"),
+                "description": request.form.get("description"),
+                "location": request.form.get("location"),
+                "occasions": request.form.get("occasions"),
+                "affiliate_1": "https://howbertandmays.ie/",
+                "affiliate_2": "https://www.knocknacarraflorists.ie/"
+            }
 
-        mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
-        flash("Flower successfully updated!")
+            mongo.db.flowers.update({"_id": ObjectId(flower_id)}, new_flower)
+            flash("Flower successfully updated!")
 
-        flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
-        user_images = list(mongo.db.user_images.find(
-            {"flower_id": ObjectId(flower["_id"])}))
+            flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
+            user_images = list(mongo.db.user_images.find(
+                {"flower_id": ObjectId(flower["_id"])}))
 
-        current_user = mongo.db.users.find_one({"email": session["user"]})
-        current_user_images = list(mongo.db.user_images.find(
-            {"user_id": current_user["email"]}))
-        return redirect(url_for("get_all_flowers"))
+            current_user = mongo.db.users.find_one({"email": session["user"]})
+            current_user_images = list(mongo.db.user_images.find(
+                {"user_id": current_user["email"]}))
+            return redirect(url_for("get_all_flowers"))
+        except:
+            return render_template("404.html")
+
     try:
         flower = mongo.db.flowers.find_one({"_id": ObjectId(flower_id)})
         return render_template("edit_flower.html", flower=flower)
