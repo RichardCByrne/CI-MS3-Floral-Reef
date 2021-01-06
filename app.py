@@ -11,7 +11,7 @@ if os.path.exists("env.py"):
 # Setting up instance of Flask
 app = Flask(__name__)
 
-# Applying all relevant vonfig vars
+# Applying all relevant config vars
 app.config["MONGO_DMNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
