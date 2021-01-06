@@ -20,7 +20,7 @@
             <form method="POST" action="{{ url_for('add_flower') }}">
                 <div class="row mb-4">
                     <!-- Flower Name -->
-                    <div class="col">
+                    <div class="col form-first-name">
                         <div class="form-outline">
                             <input type="text" id="flower_name" name="flower_name" class="form-control"
                                 placeholder="e.g. Agrimony" minlength="3" maxlength="30" required />
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <!-- Irish Name (if known) -->
-                    <div class="col">
+                    <div class="col form-last-name">
                         <div class="form-outline">
                             <input type="text" id="irish_name" name="irish_name" class="form-control"
                                 placeholder="e.g. Marbhdhraighean" minlength="3" maxlength="30" />
@@ -39,7 +39,7 @@
     
                 <div class="row mb-4">
                     <!-- Latin Name -->
-                    <div class="col">
+                    <div class="col form-first-name">
                         <div class="form-outline">
                             <input type="text" id="latin_name" name="latin_name" class="form-control"
                                 placeholder="e.g. Agrimonia Eupatoria" minlength="3" maxlength="30" required />
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <!-- Family -->
-                    <div class="col">
+                    <div class="col form-last-name">
                         <div class="form-outline mb-4">
                             <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
                                 minlength="3" maxlength="30" required />

@@ -18,7 +18,7 @@
             <form method="POST" action="{{ url_for('edit_flower', flower_id=flower._id) }}">
                 <div class="row mb-4">
                     <!-- Flower Name -->
-                    <div class="col">
+                    <div class="col form-first-name">
                         <div class="form-outline">
                             <input type="text" id="flower_name" name="flower_name" class="form-control"
                                 placeholder="e.g. Agrimony" value="{{ flower.flower_name|title }}" minlength="3"
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <!-- Irish Name -->
-                    <div class="col">
+                    <div class="col form-last-name">
                         <div class="form-outline">
                             <input type="text" id="irish_name" name="irish_name" class="form-control"
                                 placeholder="e.g. Marbhdhraighean" value="{{ flower.irish_name|title }}" minlength="3"
@@ -39,7 +39,7 @@
     
                 <div class="row mb-4">
                     <!-- Latin Name -->
-                    <div class="col">
+                    <div class="col form-first-name">
                         <div class="form-outline">
                             <input type="text" id="latin_name" name="latin_name" class="form-control"
                                 placeholder="e.g. Agrimonia Eupatoria" value="{{ flower.latin_name|title }}" minlength="3"
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <!-- Family -->
-                    <div class="col">
+                    <div class="col form-last-name">
                         <div class="form-outline mb-4">
                             <input type="text" id="family" name="family" class="form-control" placeholder="e.g. Rosaceae"
                                 value="{{ flower.family|title }}" minlength="3" maxlength="30" required />
