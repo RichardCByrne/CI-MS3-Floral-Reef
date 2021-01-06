@@ -245,7 +245,7 @@ The business's revenues are based around affiliate links placed on each non-wild
 2. It was then populated with collections called 'flowers', 'user_images' and 'users'.
 3. Test records were added to each collection to verify functionality.
 4. The flower records were given the following fields: 'flower_name', 'latin_name', 'irish_name', 'family', 'created_by', 'is_wildflower', 'flowering_time', 'image_url', 'description', 'location', 'affiliate_1' and 'affiliate_2'.
-5. The user_images records wer given the following fields: 'flower_id', 'image_source' and 'description'.
+5. The user_images records were given the following fields: 'flower_id', 'image_source' and 'description'.
 6. The users records were given the following fields: 'email', 'password', 'first_name', and 'last_name'.
 
 ### Creating a MongoDB Index
@@ -262,7 +262,7 @@ A MongoDB index was created in order to allow the database to be queried through
 ### Code Validation
 
 -   CSS W3C Validator [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fci-ms3-floral-reef.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-    -   The W3C CSS Validator was used to validate all CSS used in the project. The validator found errors with some of MDBootstrap's CSS, as well as with custom use of the backdrop-filter property. As the backdrop-filter property is being used appropriately in this project and can be found on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), as well as many other sites such as [CSS Tricks](https://css-tricks.com/almanac/properties/b/backdrop-filter/), I can only assume that the Validator has yet to implement the property into it's checks.
+    -   The W3C CSS Validator was used to validate all CSS used in the project. The validator found errors with some of MDBootstrap's CSS (for which I am not liable), as well as with custom use of the backdrop-filter property. Despite the fact that the backdrop-filter property is being used appropriately in this project and can be found on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), as well as many other sites such as [CSS Tricks](https://css-tricks.com/almanac/properties/b/backdrop-filter/), the decision was made to remove it in order to adhere to Code Institute's criteria, and replace it with large font and a box shadow to achieve similar readability. Chrome's dev tools give the button an acceptable accessibility contrast of 15.91. In a production website, the backdrop-filter property would be used as it is more visually pleasant and removes all readability issues more efficiently and effectively that then workaround implemented in this version.
     
 -   HTML W3C Validator [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-ms3-floral-reef.herokuapp.com%2F)
     -   The E3C HTML validator was used via 'Validate by URI' to validate the HTML.
@@ -363,20 +363,20 @@ A MongoDB index was created in order to allow the database to be queried through
     -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
     -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
 
-### Functionality Testing
+### Manual Functionality Testing
 
 -   All external links are functional and open in a new tab.
 -   All internal links are functional and provide user feedback where applicable.
 -   All forms function submit data correctly.
 -   All cookies work as expected.
 
-### Accessibility Testing
+### Manual Accessibility Testing
 
 -   Semantic markup is used to convey the document structure.
 -   Information is presented and categorised in terms of its priority.
 -   All images contain 'alt' text, via user the submitted description. Aria labels are used when the 'img' 'alt' attribute is not available.
 
-### Usability Testing
+### Manual Usability Testing
 
 -   All nav links bring you to the correct page.
 -   The mobile nav bar icon opens the navbar as expected.
@@ -385,18 +385,18 @@ A MongoDB index was created in order to allow the database to be queried through
 -   Already stored information is not asked for by a logged in user.
 -   Messages are displayed at the tp of the website indicating user progress and feedback where appropriate.
 
-### Interface Testing
+### Manual Interface Testing
 
 -   All queries retrieve data from the database and display correctly.
 -   Heroku processes and displays everything as expected.
 -   All pages are aesthetically consistent.
 
-### Database Testing
+### Manual Database Testing
 
 -   No database errors occur when using the queries built into this project.
 -   Data integrity is maintained while creating, updating or deleting data in the database.
 
-### Compaitibility Testing
+### Manual Compatibility Testing
 
 -   This project functions as expected on Google Chrome, Internet Explorer Microsoft Edge and Safari Browsers. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari.
 
@@ -409,12 +409,12 @@ A MongoDB index was created in order to allow the database to be queried through
     -   Best Practices: 100
     -   SEO: 100
 
-### Responsiveness Testing
+### Manual Responsiveness Testing
 
 -   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Pixel 3a XL, iPhone 6s, iPhone7, iPhone 8 & iPhoneX.
 -   The website is responsive on all device sizes.
 
-### Security Testing
+### Manual Security Testing
 
 -   Unauthorised access to secure pages returns the user to 404.html.
 -   Incorrect login details returns an user-friendly error, and reloads the page.
