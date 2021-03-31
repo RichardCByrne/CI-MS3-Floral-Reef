@@ -205,11 +205,10 @@ The business's revenues are based around affiliate links placed on each non-wild
 4. Connection string was copied.
 5. A .gitignore and env.py file were created, and the env.py file was added to the .gitignore file to prevent any sensitive information being uploaded to GitHub.
 6. An os environment default variable called "MONGO_URI" was declared with a value of the Connection String.
-6. An os environment default variable called "MONGO_DBNAME" was declared with the database name.
-6. An os environment default variable called "IP" was declared with a value chosen by the developer.
-6. An os environment default variable called "PORT" was declared with a value chosen by the developer.
-6. An os environment default variable called "PORT" was declared with a value chosen by the developer.
-7. An 'app.py' file was created, and the following code was added as a starting point:
+7. An os environment default variable called "MONGO_DBNAME" was declared with the database name.
+8. An os environment default variable called "IP" was declared with a value chosen by the developer.
+9. An os environment default variable called "PORT" was declared with a value chosen by the developer.
+10. An 'app.py' file was created, and the following code was added as a starting point:
 
    ```python
     import os
