@@ -267,6 +267,11 @@ h4.lead {
 
 a.see-more {
     font-size: 1.2rem;
+    color: #81630f;
+}
+
+a.see-more:hover {
+    text-decoration: underline;
 }
 
 .info {
@@ -452,10 +457,6 @@ form label {
 }
 
 /* ------------------------------------------------------Media Queries */
-
-/* --------------------------------Min Width 576px */
-
-@media screen and (min-width: 576px) {}
 
 /* --------------------------------Min Width 768px */
 
