@@ -39,11 +39,12 @@ The business's revenues are based around affiliate links placed on each non-wild
     -   Colour Scheme
     
         -   The colours used throughout the website are: #EAEAE5 (background), #c7ae6b (links), #DDDEBD (buttons), #C9AD5D (buttons), HTML Crimson (delete button), #1E453C (navbar background) and #3a8573 (flower info).
-        -   The navbar's dark green (#1E453C) was chosen to represent the richness of the Irish landscape. All other colours were based around this.
+        -   The navbar's dark green (#1E453C) was chosen to represent the richness of the Irish landscape. All other colours were based around this. 
+        -   [This website](https://neilpatel.com/blog/website-color-scheme/) was used to inform the colour pallet for the website.
     
     -   Typography
     
-        -   Two primary front are used throughout the website: 'Bellefair' and 'Crimson Text'. 'Bellefair' was chosen for headings as it's taller than normal vertical lines are reminiscent of the ancient Ogham stone found throughout the natural landscape of Ireland. 'Crimson Text' wsa chosen for all non-heading and non-link text to complement 'Bellfair' as a more subtle, but still sophisticated, font.
+        -   Two primary front are used throughout the website: 'Bellefair' and 'Crimson Text'. 'Bellefair' was chosen for headings as it's taller than normal vertical lines are reminiscent of the ancient Ogham stone found throughout the natural landscape of Ireland. 'Crimson Text' was chosen for all non-heading and non-link text to complement 'Bellfair' as a more subtle, but still sophisticated, font.
 
     -   Imagery
     
