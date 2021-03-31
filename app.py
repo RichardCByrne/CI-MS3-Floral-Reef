@@ -368,8 +368,8 @@ def edit_profile(email):
 
 
 # Error 404
-@app.route("/404")
-def error404():
+@app.errorhandler(404)
+def error404(e):
     return render_template("404.html")
 
 
