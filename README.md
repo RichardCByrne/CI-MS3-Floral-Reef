@@ -437,7 +437,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 -   Unauthorised access to secure pages returns the user to 404.html.
 -   Incorrect login details returns an user-friendly error, and reloads the page.
--   Database code injection by search bar is prevented against by using regular expressions and by using the .isalspha() method in Python.
+-   Database code injection by search bar is prevented against by using regular expressions and by using the '.isalspha()' method in Python.
 -   Website uses HTTPS.
 -   Users can only edit flowers that they themselves have created.
 -   Users can change their password without verification as long as they have logged in. This is addressed in the roadmap.
