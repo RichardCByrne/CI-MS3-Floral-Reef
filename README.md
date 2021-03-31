@@ -413,6 +413,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 -   No database errors occur when using the queries built for this project.
 -   Data integrity is maintained while creating, reading, updating or deleting data in the database.
+-   When a flower with user images has been deleted, the user images intentionally remain in the user's profile page, to address user-image preservation.
 
 ### Manual Compatibility Testing
 
