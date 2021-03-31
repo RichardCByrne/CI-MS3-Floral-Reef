@@ -17,6 +17,7 @@
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('edit_flower', flower_id=flower._id) }}">
                 <div class="row mb-4">
+
                     <!-- Flower Name -->
                     <div class="col form-first-name">
                         <div class="form-outline">
@@ -26,6 +27,7 @@
                             <label class="form-label" for="flower_name">Flower Name</label>
                         </div>
                     </div>
+
                     <!-- Irish Name -->
                     <div class="col form-last-name">
                         <div class="form-outline">
@@ -47,6 +49,7 @@
                             <label class="form-label" for="latin_name">Latin Name</label>
                         </div>
                     </div>
+
                     <!-- Family -->
                     <div class="col form-last-name">
                         <div class="form-outline mb-4">
@@ -131,6 +134,7 @@
                     <button type="submit" class="btn mb-4 form-submit-btn">Edit Flower</button>
                     <a href="{{ url_for('flower', flower_id=flower_id) }}" class="btn mb-4 cancel-button">Cancel</a>
                 </div>
+
             </form>
         </div>
         <div class="col-1 col-lg-3"></div>

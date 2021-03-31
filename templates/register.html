@@ -17,19 +17,19 @@
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('register') }}">
                 <div class="row mb-4">
+
                     <!-- First Name -->
                     <div class="col form-first-name">
                         <div class="form-outline">
-                            <input type="text" id="first_name" name="first_name" class="form-control" minlength="2"
-                                maxlength="25" />
+                            <input type="text" id="first_name" name="first_name" class="form-control" minlength="2" maxlength="25" />
                             <label class="form-label" for="first_name">First Name</label>
                         </div>
                     </div>
+                    
                     <!-- Last Name -->
                     <div class="col form-last-name">
                         <div class="form-outline">
-                            <input type="text" id="last_name" name="last_name" class="form-control" minlength="2"
-                                maxlength="25" />
+                            <input type="text" id="last_name" name="last_name" class="form-control" minlength="2" maxlength="25" />
                             <label class="form-label" for="last_name">Last Name</label>
                         </div>
                     </div>

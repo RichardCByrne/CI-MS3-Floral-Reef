@@ -18,6 +18,7 @@
         <div class="col-10 col-lg-6">
             <!-- Form referenced from https://mdbootstrap.com/docs/standard/forms/overview/#subsection-register -->
             <form method="POST" action="{{ url_for('add_flower') }}">
+
                 <div class="row mb-4">
                     <!-- Flower Name -->
                     <div class="col form-first-name">
@@ -27,6 +28,7 @@
                             <label class="form-label" for="flower_name">Flower Name</label>
                         </div>
                     </div>
+                    
                     <!-- Irish Name (if known) -->
                     <div class="col form-last-name">
                         <div class="form-outline">
@@ -109,6 +111,6 @@
         </div>
         <div class="col-1 col-lg-3"></div>
     </section>
-    <!-- Add Flower Form -->
+    <!-- ./Add Flower Form -->
 
 {% endblock %}

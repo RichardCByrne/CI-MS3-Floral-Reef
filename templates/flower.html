@@ -11,6 +11,7 @@
     <div class="container">
         <div class="flower-container">
             <section class="row">
+
                 <!-- Image -->
                 <div class="col-md-6 text-center">
                     <figure>
@@ -18,6 +19,7 @@
                     </figure>
                 </div>
                 <!-- ./Image -->
+
                 <!-- Overview -->
                 <div class="col-md-6">
                     <h3>{{ flower.flower_name|title }}</h3>
@@ -25,7 +27,8 @@
                         <div class="buttons">
                             <span><a href="{{ url_for('edit_flower', flower_id=flower._id) }}" role="button" class="btn btn-lg edit-btn">Edit
                                     Flower</a></span>
-                            <span><a href="{{ url_for('delete_flower', flower_id=flower._id) }}" role="button" class="btn btn-lg delete-btn">Delete
+                            <span><a href="{{ url_for('delete_flower', flower_id=flower._id) }}" role="button"
+                                    class="btn btn-lg delete-btn">Delete
                                     Flower</a></span>
                         </div>
                     {% endif %}
@@ -47,7 +50,9 @@
                     {% endif %}
                 </div>
                 <!-- ./Overview -->
+
             </section>
+
             <!-- Flower Info -->
             <section class="flower-info">
                 <div class="row">
@@ -85,7 +90,9 @@
                 </div>
             </section>
             <!-- ./Flower Info -->
+
             <br>
+
             <!-- User Images -->
             <!-- Checks if there any user images for the current flower -->
             {% if user_images %}
@@ -93,18 +100,22 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h4>User Images
+
                                 <!-- Checks if there is currently a user logged in -->
                                 {% if session.user %}
-                                    <p><a class="btn btn-lg waves-effect edit-btn" role="button" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your
+                                    <p><a class="btn btn-lg waves-effect edit-btn" role="button"
+                                            href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your
                                             Image!</a></p>
                                 {% else %}
                                     <p>(<a href="{{ url_for('login') }}">Log in</a> to add your own images!)</p>
                                 {% endif %}
+
                             </h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
+
                             <!-- Displays all user-submitted images of the flower with the user-submitted description as the alt tag -->
                             {% for image in user_images %}
                                 {% if image in current_user_images %}
@@ -128,7 +139,7 @@
                         </div>
                     </div>
                 </section>
-            <!-- In no user images exist for the current flower -->
+            <!-- If no user images exist for the current flower -->
             {% else %}
             <section class="row">
                 <div class="col-md-6">
@@ -145,6 +156,7 @@
             </section>
             {% endif %}
             <!-- ./User Images -->
+            
         </div>
     </div>
 

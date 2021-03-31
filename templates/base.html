@@ -7,7 +7,8 @@
     <!-- Referenced from https://www.w3schools.com/tags/tag_meta.asp -->
     <meta name="author" content="Richard Byrne">
     <meta name="keywords" content="Flowers, Ireland, Irish, Wildflowers">
-    <meta name="description" content="The Only Community-Driven Irish Flower Encyclopedia. Register now to start contributing!">
+    <meta name="description"
+        content="The Only Community-Driven Irish Flower Encyclopedia. Register now to start contributing!">
     <meta name="application-name" content="Floral Reef">
     {% block title %}
     {% endblock %}
@@ -26,10 +27,13 @@
 
 <body>
     <header>
+
         <!-- Navbar - referenced from https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
         <nav class="navbar navbar-expand-lg">
+
             <!-- Container wrapper -->
             <div class="container-fluid">
+
                 <!-- Navbar brand -->
                 <a class="navbar-brand" href="{{ url_for('home') }}">Floral Reef</a>
 
@@ -41,6 +45,7 @@
 
                 <!-- Collapsible wrapper -->
                 <div class="navbar-collapse collapse" id="navbar">
+                    
                     <!-- Links -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -69,15 +74,18 @@
                         {% endif %}
                     </ul>
                     <form action="{{ url_for('search') }}" method="post" class="text-center" role="search">
-                        <input type="search" name="query" id="query" minlength="3" class="search-input" role="searchbox" aria-label="search"
+                        <input type="search" name="query" id="query" minlength="3" class="search-input" role="searchbox" aria-label="searchbox"
                             pattern="^[a-zA-Z0-9]{1,20}$" required>
-                        <button class="search-btn fas fa-search"></button>
+                        <button role="button" aria-label="search button" class="search-btn fas fa-search"></button>
                     </form>
                     <!-- ./Links -->
+
                 </div>
                 <!-- ./Collapsible wrapper -->
+
             </div>
             <!-- ./Container wrapper -->
+
         </nav>
 
         <!-- Flashed messages -->
