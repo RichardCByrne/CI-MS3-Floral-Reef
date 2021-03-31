@@ -416,7 +416,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 ### Manual Compatibility Testing
 
--   This project functions as expected on Google Chrome, Internet Explorer Microsoft Edge and Safari Browsers. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari.
+-   This project functions as expected on Google Chrome, Internet Explorer and Microsoft Edge. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari but was not omitted for this submission for the reasons outlined in the Code Validation section.
 
 ### Performance Testing
 

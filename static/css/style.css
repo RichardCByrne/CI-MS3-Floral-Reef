@@ -139,6 +139,10 @@ strong {
     font-size: 1.2rem;
 }
 
+figure {
+    margin: 0;
+}
+
 /* --------------------------------Nav */
 
 .navbar {
@@ -295,6 +299,10 @@ a.see-more {
     object-fit: cover;
     overflow: hidden;
     margin-bottom: 1.5rem;
+}
+
+.buttons {
+    margin-bottom: 1rem;
 }
 
 .flower-affiliate-link {

@@ -31,7 +31,9 @@
                     <!-- Current User Images -->
                     {% for image in user_images %}
                         <div class="col-6 col-md-4">
-                            <img class="d-inline-flex profile-images" src="{{ image.image_source }}" alt="{{ image.description }}">
+                            <figure>
+                                <img class="d-inline-flex profile-images" src="{{ image.image_source }}" alt="{{ image.description }}">
+                            </figure>
                         </div>
                     {% endfor %}
                     <!-- ./Current User Images -->

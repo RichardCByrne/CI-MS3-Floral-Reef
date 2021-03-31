@@ -13,21 +13,22 @@
             <section class="row">
                 <!-- Image -->
                 <div class="col-md-6 text-center">
-                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                    <figure>
+                        <img src="{{ flower.image_url }}" alt="{{ flower.flower_name }}">
+                    </figure>
                 </div>
                 <!-- ./Image -->
                 <!-- Overview -->
                 <div class="col-md-6">
-                    <h3>{{ flower.flower_name|title }}
+                    <h3>{{ flower.flower_name|title }}</h3>
                     {% if current_user_created_flower %}
                         <div class="buttons">
-                            <span><a href="{{ url_for('edit_flower', flower_id=flower._id) }}" class="btn btn-lg edit-btn">Edit
+                            <span><a href="{{ url_for('edit_flower', flower_id=flower._id) }}" role="button" class="btn btn-lg edit-btn">Edit
                                     Flower</a></span>
-                            <span><a href="{{ url_for('delete_flower', flower_id=flower._id) }}" class="btn btn-lg delete-btn">Delete
+                            <span><a href="{{ url_for('delete_flower', flower_id=flower._id) }}" role="button" class="btn btn-lg delete-btn">Delete
                                     Flower</a></span>
                         </div>
                     {% endif %}
-                    </h3>
                     <h6>{{ flower.latin_name|upper }}</h6>
                     {% if flower.is_wildflower == "on" %}
                         <p><strong>Type: Wildflower</strong></p>
@@ -94,7 +95,7 @@
                             <h4>User Images
                                 <!-- Checks if there is currently a user logged in -->
                                 {% if session.user %}
-                                    <p><a class="btn btn-lg waves-effect edit-btn" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your
+                                    <p><a class="btn btn-lg waves-effect edit-btn" role="button" href="{{ url_for('add_user_image', flower_id=flower._id) }}">Add Your
                                             Image!</a></p>
                                 {% else %}
                                     <p>(<a href="{{ url_for('login') }}">Log in</a> to add your own images!)</p>
@@ -109,14 +110,18 @@
                                 {% if image in current_user_images %}
                                     <!-- Referenced from https://codepen.io/philcheng/pen/YWyYwG -->
                                     <div class="user-image-container">
-                                        <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
+                                        <figure>
+                                            <img class="current-user-image" src="{{ image.image_source }}" alt="{{ image.description }}">
+                                        </figure>
                                         <p class="your-image">Your image</p>
                                         <div class="overlay"></div>
                                         <a href="{{ url_for('delete_user_image', image_id=image._id) }}" class="btn user-image-delete-btn">Delete</a>
                                     </div>
                                 {% else %}
                                     <div class="user-image-container">
-                                        <img src="{{ image.image_source }}" alt="{{ image.description }}">
+                                        <figure>
+                                            <img src="{{ image.image_source }}" alt="{{ image.description }}">
+                                        </figure>
                                     </div>
                                 {% endif %}
                             {% endfor %}

@@ -14,96 +14,101 @@
 
     <!-- If there are flowers found (used for flower search) -->
     {% if flowers|length > 0 %}
+        <section class="container">
         <!-- Iterate over each flower -->
         {% for flower in flowers %}
             <!-- Change display orientation on every second flower -->
             {% if loop.index % 2 != 0 %}
-                <section class="container">
-                    <div class="flowers-container-left">
-                        <div class="row">
-                            <!-- Flower Image -->
-                            <div class="col-md-6 text-center">
-                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
-                                        alt="{{ flower.flower_name }}"></a>
-                            </div>
-                            <!-- ./Flower Image -->
-                            <!-- Flower Info -->
-                            <div class="col-md-6">
-                                <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
-                                <p><em>{{ flower.latin_name|upper }}</em></p>
-                                <!-- If the flower is a wildflower, display Locations -->
-                                {% if flower.is_wildflower == "on" %}
-                                    <p>Type: Wildflower</p>
-                                    <p>Locations: {{ flower.location }}</p>
-                                <!-- Otherwise, display Occasions -->
-                                {% else %}
-                                    <p>Occasions: {{ flower.occasions }}</p>
-                                {% endif %}
-                                <p>Flowering Time: {{ flower.flowering_time|title }}</p>
-                                <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
-                            </div>
-                            <!-- ./Flower Info -->
+                <div class="flowers-container-left">
+                    <div class="row">
+                        <!-- Flower Image -->
+                        <div class="col-md-6 text-center">
+                            <a href="{{ url_for('flower', flower_id=flower._id) }}">
+                                <figure>
+                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name|title }}">
+                                </figure>
+                            </a>
                         </div>
+                        <!-- ./Flower Image -->
+                        <!-- Flower Info -->
+                        <div class="col-md-6">
+                            <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                            <p><em>{{ flower.latin_name|upper }}</em></p>
+                            <!-- If the flower is a wildflower, display Locations -->
+                            {% if flower.is_wildflower == "on" %}
+                                <p>Type: Wildflower</p>
+                                <p>Locations: {{ flower.location }}</p>
+                            <!-- Otherwise, display Occasions -->
+                            {% else %}
+                                <p>Occasions: {{ flower.occasions }}</p>
+                            {% endif %}
+                            <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                            <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                        </div>
+                        <!-- ./Flower Info -->
                     </div>
-                </section>
+                </div>
             {% else %}
-                <section class="container">
-                    <div class="flowers-container-right d-none">
-                        <div class="row">
-                            <!-- Flower Info -->
-                            <div class="col-md-6">
-                                <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
-                                <p><em>{{ flower.latin_name|upper }}</em></p>
-                                <!-- If the flower is a wildflower, display Locations -->
-                                {% if flower.is_wildflower == "on" %}
-                                    <p>Type: Wildflower</p>
-                                    <p>Locations: {{ flower.location }}</p>
-                                <!-- Otherwise, display Occasions -->
-                                {% else %}
-                                    <p>Occasions: {{ flower.occasions }}</p>
-                                {% endif %}
-                                <p>Flowering Time: {{ flower.flowering_time|title }}</p>
-                                <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
-                            </div>
-                            <!-- ./Flower Info -->
-                            <!-- Flower Image -->
-                            <div class="col-md-6 text-center">
-                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
-                                        alt="{{ flower.flower_name }}"></a>
-                            </div>
-                            <!-- ./Flower Image -->
+                <div class="flowers-container-right d-none">
+                    <div class="row">
+                        <!-- Flower Info -->
+                        <div class="col-md-6">
+                            <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                            <p><em>{{ flower.latin_name|upper }}</em></p>
+                            <!-- If the flower is a wildflower, display Locations -->
+                            {% if flower.is_wildflower == "on" %}
+                                <p>Type: Wildflower</p>
+                                <p>Locations: {{ flower.location }}</p>
+                            <!-- Otherwise, display Occasions -->
+                            {% else %}
+                                <p>Occasions: {{ flower.occasions }}</p>
+                            {% endif %}
+                            <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                            <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
                         </div>
-                    </div>
-                    <!-- Makes every second iteration display like the first, only on mobile -->
-                    <div class="flowers-container-left-mobile d-block">
-                        <div class="row">
-                            <!-- Flower Image -->
-                            <div class="col-md-6 text-center">
-                                <a href="{{ url_for('flower', flower_id=flower._id) }}"><img src="{{ flower.image_url }}"
-                                        alt="{{ flower.flower_name }}"></a>
-                            </div>
-                            <!-- ./Flower Image -->
-                            <!-- Flower Info -->
-                            <div class="col-md-6">
-                                <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
-                                <p><em>{{ flower.latin_name|upper }}</em></p>
-                                {% if flower.is_wildflower == "on" %}
-                                    <p>Type: Wildflower</p>
-                                    <p>Locations: {{ flower.location }}</p>
-                                {% else %}
-                                    <p>Occasions: {{ flower.occasions }}</p>
-                                {% endif %}
-                                <p>Flowering Time: {{ flower.flowering_time|title }}</p>
-                                <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
-                            </div>
-                            <!-- ./Flower Info -->
+                        <!-- ./Flower Info -->
+                        <!-- Flower Image -->
+                        <div class="col-md-6 text-center">
+                            <a href="{{ url_for('flower', flower_id=flower._id) }}">
+                                <figure>
+                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name|title }}">
+                                </figure>
+                            </a>
                         </div>
+                        <!-- ./Flower Image -->
                     </div>
-                    <!-- ./Makes every second iteration display like the first, only on mobile -->
-                </section>
+                </div>
+                <!-- Makes every second iteration display like the first, only on mobile -->
+                <div class="flowers-container-left-mobile d-block">
+                    <div class="row">
+                        <!-- Flower Image -->
+                        <div class="col-md-6 text-center">
+                            <figure>
+                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name|title }}">
+                            </figure>
+                        </div>
+                        <!-- ./Flower Image -->
+                        <!-- Flower Info -->
+                        <div class="col-md-6">
+                            <h4><a href="{{ url_for('flower', flower_id=flower._id) }}">{{ flower.flower_name|title }}</a></h4>
+                            <p><em>{{ flower.latin_name|upper }}</em></p>
+                            {% if flower.is_wildflower == "on" %}
+                                <p>Type: Wildflower</p>
+                                <p>Locations: {{ flower.location }}</p>
+                            {% else %}
+                                <p>Occasions: {{ flower.occasions }}</p>
+                            {% endif %}
+                            <p>Flowering Time: {{ flower.flowering_time|title }}</p>
+                            <a class="see-more" href="{{ url_for('flower', flower_id=flower._id) }}">See More</a>
+                        </div>
+                        <!-- ./Flower Info -->
+                    </div>
+                </div>
+                <!-- ./Makes every second iteration display like the first, only on mobile -->
             {% endif %}
             <!-- ./Change display orientation on every second flower -->
         {% endfor %}
+        </section>
         <!-- ./Iterate over each flower -->
     <!-- If no flowers found, display and message and search bar -->
     {% else %}
