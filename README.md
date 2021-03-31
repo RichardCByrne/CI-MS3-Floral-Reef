@@ -44,7 +44,7 @@ The business's revenues are based around affiliate links placed on each non-wild
     
     -   Typography
     
-        -   Two primary front are used throughout the website: 'Bellefair' and 'Crimson Text'. 'Bellefair' was chosen for headings as it's taller than normal vertical lines are reminiscent of the ancient Ogham stone found throughout the natural landscape of Ireland. 'Crimson Text' was chosen for all non-heading and non-link text to complement 'Bellfair' as a more subtle, but still sophisticated, font.
+        -   Two primary front are used throughout the website: 'Bellefair' and 'Crimson Text'. 'Bellefair' was chosen for headings as its taller-than-average vertical lines are reminiscent of the ancient Ogham stone found throughout the natural landscape of Ireland. 'Crimson Text' was chosen for all non-heading and non-link text to complement 'Bellfair' as a more subtle, but still sophisticated, font.
 
     -   Imagery
     
@@ -103,7 +103,7 @@ The business's revenues are based around affiliate links placed on each non-wild
 
         -   The 'Colours' section was swapped out to host the 'Irish Name'.
         -   The 'Occasions' section dynamically changes to 'Locations Found' based on whether or not the flower is marked as a wildflower.
-        -   Comments were omitted from this build in favour of sharing images, as the website is already text heavy.
+        -   Comments were omitted from this build in favour of sharing images, as the flower profiles are already text heavy.
 
     -   Form Pages
 
@@ -183,7 +183,7 @@ The business's revenues are based around affiliate links placed on each non-wild
     
 ## Development
 
-### Setting Up MongoDB Shell
+### Setting Up MongoDB Shell in Windows 10
 
 1. A free account was set up on [cloud.mongodb.com](cloud.mongodb.com)
 2. A new cluster and database were created.
@@ -261,7 +261,7 @@ The business's revenues are based around affiliate links placed on each non-wild
 
 1. A new database called 'floral_reef' was created.
 2. It was then populated with collections called 'flowers', 'user_images' and 'users'.
-3. Test records were added to each collection to verify functionality.
+3. Test records were added to each collection to verify functionality, and then deleted.
 4. The flower records were given the following fields: 'flower_name', 'latin_name', 'irish_name', 'family', 'created_by', 'is_wildflower', 'flowering_time', 'image_url', 'description', 'location', 'affiliate_1' and 'affiliate_2'.
 5. The user_images records were given the following fields: 'flower_id', 'image_source' and 'description'.
 6. The users records were given the following fields: 'email', 'password', 'first_name', and 'last_name'.
@@ -271,7 +271,7 @@ The business's revenues are based around affiliate links placed on each non-wild
 A MongoDB index was created in order to allow the database to be queried through user search.
 
 1. A new terminal was opened within VSCode.
-2. Python was initialised by typing ```python3```.
+2. Python was initialised by typing ```python```.
 3. The instance of our app, 'mongo', was imported from the app file using: ```from app import mongo```.
 4. A new index was created by typing: ```mongo.db.flowers.create_index([("flower_name", "text"), ("latin_name", "text"), ("irish_name", "text"), ("family", "text")])```
 
@@ -280,7 +280,7 @@ A MongoDB index was created in order to allow the database to be queried through
 ### Code Validation
 
 -   CSS W3C Validator [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fci-ms3-floral-reef.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-    -   The W3C CSS Validator was used to validate all CSS used in the project. The validator found errors with some of MDBootstrap's CSS (for which I am not liable), as well as with custom use of the backdrop-filter property. Despite the fact that the backdrop-filter property is being used appropriately in this project and can be found on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), as well as many other sites such as [CSS Tricks](https://css-tricks.com/almanac/properties/b/backdrop-filter/), the decision was made to remove it in order to adhere to Code Institute's criteria, and replace it with large font and a box shadow to achieve similar readability. Chrome's dev tools give the button an acceptable accessibility contrast of 15.91. In a production website, the backdrop-filter property would be used as it is more visually pleasant and removes all readability issues more efficiently and effectively that then workaround implemented in this version.
+    -   The W3C CSS Validator was used to validate all CSS used in the project. The validator found errors with some of MDBootstrap's CSS (for which I am not liable), as well as with custom use of the backdrop-filter property. Despite the fact that the backdrop-filter property is being used appropriately in this project and can be found on [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), as well as many other sites such as [CSS Tricks](https://css-tricks.com/almanac/properties/b/backdrop-filter/), the decision was made to remove it in order to adhere to Code Institute's criteria, and replace it with larger font and a box shadow to achieve similar readability. Chrome's dev tools give the button an acceptable accessibility contrast of 15.91. In a production website, the backdrop-filter property would be used as it is more visually pleasant and removes all readability issues more efficiently and effectively that then workaround implemented in this version.
     
 -   HTML W3C Validator [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-ms3-floral-reef.herokuapp.com%2F)
     -   The E3C HTML validator was used via 'Validate by URI' to validate the HTML.
@@ -302,7 +302,7 @@ A MongoDB index was created in order to allow the database to be queried through
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/homepage.PNG?raw=true" alt="homepage">
 
         -   The text within the hero image on the homepage clearly defines what the website is and isn't, in order to set users' expectations accordingly.
-        -   The intended path for the user to go down is to click he 'Get Inspired' button to see how the primary data is laid out. From there, they can either create an account and start contributing or view more flowers via the navbar.
+        -   The intended path for the user to go down is to click the 'Get Inspired' button to see how the primary data is laid out. From there, they can either create an account and start contributing or view more flowers via the navbar.
         -   There is a search bar and responsive navbar that facilitate simple and quick user navigation.
 
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/search_bar.PNG?raw=true" alt="search bar">
@@ -311,7 +311,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
         -   From the homepage, users can click on the 'Get Inspired' button to be taken to a random flower.
 
-        <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/get_inspired_Button.PNG?raw=true" alt="get inspired button">
+        <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/get_inspired_button.PNG?raw=true" alt="get inspired button">
 
         -   Users can view all the flowers on the website by clicking on the 'Flowers' tab in the navbar.
 
@@ -335,7 +335,7 @@ A MongoDB index was created in order to allow the database to be queried through
     
     1.  As a Returning Visitor, I want to register and join the community/log into my account/edit my account details.
         
-        -   The navbar contains a 'Register' and 'Log In' buttons that displays whe no user is logged in.
+        -   The navbar contains a 'Register' and 'Log In' buttons that displays when no user is logged in.
         -   The 'Log In' page contains a link to the 'Register' page, in case the user hasn't created an account yet.
 
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/log_in.PNG?raw=true" alt="login">
@@ -352,7 +352,7 @@ A MongoDB index was created in order to allow the database to be queried through
         <br>
         <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/edit_profile.PNG?raw=true" alt="edit profile page">
         
-    2.  As a Returning Visitor, I want to share my own photos to different flowers.
+    2.  As a Returning Visitor, I want to share my own photos of different flowers.
         
         -   Each flower profile has space below the flower information for users to upload and share their own images of the relevant flower.
         -   Each flower profile displays a link to the 'Log In' page when no user in logged in, so a user can log in to their account and start contributing.
@@ -367,25 +367,25 @@ A MongoDB index was created in order to allow the database to be queried through
 
     1.  As a frequent visitor, I want to be able to easily edit and delete the content that I contribute to the site.
 
-    -   Flowers can be edited by the user who created the flower. This prevents any user from changing another user's contribution.
+        -   Flowers can be edited by the user who created the flower. This prevents any user from changing another user's contribution.
 
-    <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/edit_delete_flower_buttons.PNG?raw=true" alt="edit and delete flower buttons">
+        <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/edit_delete_flower_buttons.PNG?raw=true" alt="edit and delete flower buttons">
 
-    -   Flowers can be deleted by the user who created it from the flower's profile page, using the 'Delete Flower' button.
-    -   Each user-submitted image contains a delete button that only displays for the user who submitted the image, allowing them to delete the image at their behest.
+        -   Flowers can be deleted by the user who created it from the flower's profile page, using the 'Delete Flower' button.
+        -   Each user-submitted image contains a delete button that only displays for the user who submitted the image, allowing them to delete the image at their behest.
     
     <img src="https://github.com/RichardByrne95/CI-MS3-Floral-Reef/blob/main/static/images/user_image_delete_button.png?raw=true" alt="user image delete button">
         
     2.  As a frequent user, I want to see new content that has been added by users.
 
-    -   The user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
-    -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
+        -   At this stage, the user would already be comfortable with the website layout and can easily navigate to the list of all the flowers where new flowers would be displayed.
+        -   The user would already be comfortable with the website layout and can easily navigate to each of the individual flowers and view the user-submitted images.
 
 ### Manual Functionality Testing
 
 -   All external links are functional and open in a new tab.
 -   All internal links are functional and provide user feedback where applicable.
--   All forms function submit data correctly.
+-   All forms function and submit data correctly.
 -   All cookies work as expected.
 
 ### Manual Accessibility Testing
@@ -401,22 +401,22 @@ A MongoDB index was created in order to allow the database to be queried through
 -   User Navigation is unambiguous.
 -   While the 'Distinction' criteria state that 'users who direct to a non-existent page or resource are redirected back to the main page', it was deemed more appropriate to either display an error message on the same page if submitting a form, or redirecting the to '404.html' which contains a link to the homepage. This way the user is given explicit direction and understands that something went wrong.
 -   Already stored information is not asked for by a logged in user.
--   Messages are displayed at the tp of the website indicating user progress and feedback where appropriate.
+-   Messages are displayed at the top of the website indicating user progress and feedback where appropriate.
 
 ### Manual Interface Testing
 
 -   All queries retrieve data from the database and display correctly.
--   Heroku processes and displays everything as expected.
+-   Heroku processes and displays everything correctly.
 -   All pages are aesthetically consistent.
 
 ### Manual Database Testing
 
--   No database errors occur when using the queries built into this project.
--   Data integrity is maintained while creating, updating or deleting data in the database.
+-   No database errors occur when using the queries built for this project.
+-   Data integrity is maintained while creating, reading, updating or deleting data in the database.
 
 ### Manual Compatibility Testing
 
--   This project functions as expected on Google Chrome, Internet Explorer and Microsoft Edge. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari but was not omitted for this submission for the reasons outlined in the Code Validation section.
+-   This project functions as expected on Google Chrome, Internet Explorer and Microsoft Edge. The CSS property 'background-filter' for the 'Get Inspired' button only works on Google Chrome and Microsoft Edge, but not Firefox and Safari and so was omitted for this submission for the reasons outlined in the Code Validation section.
 
 ### Performance Testing
 
@@ -429,7 +429,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 ### Manual Responsiveness Testing
 
--   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Pixel 3a XL, iPhone 6s, iPhone7, iPhone 8 & iPhoneX.
+-   The website was viewed on a variety of devices including Desktop, Laptop, Moto G3, Pixel 3a XL, iPhone 6s, iPhone 7, iPhone 8 & iPhone X.
 -   The website is responsive on all device sizes.
 
 ### Manual Security Testing
@@ -439,7 +439,7 @@ A MongoDB index was created in order to allow the database to be queried through
 -   Database code injection by search bar is prevented against by using regular expressions and by using the .isalspha() method in Python.
 -   Website uses HTTPS.
 -   Users can only edit flowers that they themselves have created.
--   Users can change their password without verification. This is addressed in the roadmap.
+-   Users can change their password without verification as long as they have logged in. This is addressed in the roadmap.
 -   All data, including user-submitted content is editable via the MongoDB database.
     
 ### Further Testing
@@ -453,7 +453,7 @@ A MongoDB index was created in order to allow the database to be queried through
 
 ### Source Control Process
 
-This project was developed using Visual Studio Code, Phaser Game Engine, Git and GitHub using the following steps:
+This project was developed using Visual Studio Code, Git and GitHub using the following steps:
 
 1.  Logged into Github Desktop App
 2.  A new repository called 'CI-MS3-Floral-Reef' was created locally for this project.
@@ -471,9 +471,9 @@ This project was developed using Visual Studio Code, Phaser Game Engine, Git and
 The project was deployed to Heroku using the following steps...
 
 1.  Create a file named 'Procfile' in the project directory and paste the following code: ```web: python app.py```
-2.  A requirements.txt file wsa created by using the command: ```pip3 freeze --local > requirements.txt```
-3.  Log into Heroku and crete a new Heroku app.
-4.  Name the app 'ci-ms3-floral-reef' and select local region.
+2.  A 'requirements.txt' file was created by using the command: ```pip3 freeze --local > requirements.txt```
+3.  Log into Heroku and create a new Heroku app.
+4.  Name the app and select your local region.
 5.  Connect Heroku to GitHub by following the on-screen prompts.
 6.  Select the repository from which you want to deploy your code and click 'Connect'.
 7.  Enable automatic deploys from the master branch.
@@ -498,7 +498,7 @@ The project was deployed to Heroku using the following steps...
 
 ### Code
 
--   [Code Institute - Full Stack Software Development Course](https://codeinstitute.net/): Coding skills learned in this course allowed the developer to create all the pages on this web-app.
+-   [Code Institute - Full Stack Software Development Course](https://codeinstitute.net/): Coding skills learned in this course allowed the developer to create all the pages of this web-app.
 -   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web): Referenced for best practices for lists and images, as well as the smooth scrolling functionality.
 
 ### Content
