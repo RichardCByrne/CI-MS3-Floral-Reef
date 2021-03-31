@@ -420,10 +420,10 @@ A MongoDB index was created in order to allow the database to be queried through
 
 ### Performance Testing
 
--   Lighthouse on Google Chrome Dev Tools gave the following scores:
+-   Lighthouse on Google Chrome Dev Tools gave the following scores on the development server:
 
-    -   Performance: 98
-    -   Accessibility: 92
+    -   Performance: 100
+    -   Accessibility: 99
     -   Best Practices: 100
     -   SEO: 100
 
@@ -487,6 +487,8 @@ The project was deployed to Heroku using the following steps...
 -   A more sophisticated security system will be integrated into all CRUD actions and user account systems.
 -   A comment section will be implemented into each of the flower profiles.
 -   A map feature will be implemented, so that users can pinpoint exactly where their photos were taken.
+-   Add the ability to manage flowers and user images from the profile page.
+-   Allow users to sort trough flowers by date added, alphabetical etc.
 
 ### Project Status
 
@@ -508,7 +510,7 @@ The project was deployed to Heroku using the following steps...
 ### Media
 
 -   The Hero Image on the homepage comes from [Unsplash.](https://images.unsplash.com/photo-1511219096939-ce77f5f44cc8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw=&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80)
--   The current images of the flowers, as of the time of writing, are all copyright compliant.
+-   The current images of the flowers, as of the time of writing, are all copyright compliant. I am not responsible for the copyright or validity of images uploaded by other users.
 -   All placeholder images for the project are displaying correctly as of the date of submission. I am not responsible for any images not being loaded due to an issue on the image hosting side once this project has been submitted.
 
 ### Acknowledgements
