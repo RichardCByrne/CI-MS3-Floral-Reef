@@ -97,9 +97,11 @@
 
                         <!-- Flower Image -->
                         <div class="col-md-6 text-center">
-                            <figure>
-                                <img src="{{ flower.image_url }}" alt="{{ flower.flower_name|title }}">
-                            </figure>
+                            <a href="{{ url_for('flower', flower_id=flower._id) }}">
+                                <figure>
+                                    <img src="{{ flower.image_url }}" alt="{{ flower.flower_name|title }}">
+                                </figure>
+                            </a>
                         </div>
                         <!-- ./Flower Image -->
                         
